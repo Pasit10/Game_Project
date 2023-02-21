@@ -2,13 +2,12 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import java.util.ArrayList;
-import java.util.Collections;
 
 public class Game extends JFrame implements KeyListener{
     private JPanel[][] scene = new JPanel[80][80];
     private ArrayList<snakeposXY> snake = new ArrayList<>();
     private char command;
-    private boolean canbrake;
+    //private boolean canbrake;
     Game(){
         setSize(1000,1500);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -29,19 +28,9 @@ public class Game extends JFrame implements KeyListener{
         }
 
         // ------------------ TEST ------------------------//
-        snake.add(new snakeposXY(20,50,scene[20][50]));
-        snake.add(new snakeposXY(20,50,scene[20][50]));
-        snake.add(new snakeposXY(20,50,scene[20][50]));
-        snake.add(new snakeposXY(20,50,scene[20][50]));
-        snake.add(new snakeposXY(20,50,scene[20][50]));
-        snake.add(new snakeposXY(20,50,scene[20][50]));
-        snake.add(new snakeposXY(20,50,scene[20][50]));
-        snake.add(new snakeposXY(20,50,scene[20][50]));
-        snake.add(new snakeposXY(20,50,scene[20][50]));
-        snake.add(new snakeposXY(20,50,scene[20][50]));
-        snake.add(new snakeposXY(20,50,scene[20][50]));
-        snake.add(new snakeposXY(20,50,scene[20][50]));
-        snake.add(new snakeposXY(20,50,scene[20][50]));
+        for(int i = 0;i < 20;i++){
+            snake.add(new snakeposXY(10,10));
+        }
          // ------------------ TEST ------------------------//
     }
 
@@ -108,9 +97,9 @@ public class Game extends JFrame implements KeyListener{
     private class snakeposXY{
         int row , col;
         JPanel pos;
-        snakeposXY(int x,int y,JPanel z){
+        snakeposXY(int x,int y){
             this.row = x; this.col = y;
-            pos = z;
+            pos = scene[x][y];
         }
         @Override public String toString(){
             return String.format("(%d,%d)",row,col); 
