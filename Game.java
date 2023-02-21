@@ -54,6 +54,7 @@ public class Game extends JFrame implements KeyListener{
                 snake.get(j).col = snake.get(j - 1).col;
                 snake.get(j).pos = snake.get(j - 1).pos;
             }
+            // --------------- set Pos --------------- //
             if(snake.get(0).row - 1 < 0){
                 snake.get(0).row = scene.length;
             }
@@ -63,25 +64,24 @@ public class Game extends JFrame implements KeyListener{
             switch(command){
                 case 'w' :
                     snake.get(0).row = (snake.get(0).row - 1) % scene.length;
-                    snake.get(0).pos = scene[(snake.get(0).row) % scene.length][snake.get(0).col];
                     break;
                 case 's':
                     snake.get(0).row = (snake.get(0).row + 1) % scene.length;
-                    snake.get(0).pos = scene[(snake.get(0).row) % scene.length][snake.get(0).col];
                     break;
                 case 'a':
                     snake.get(0).col = (snake.get(0).col - 1) % scene[0].length;
-                    snake.get(0).pos = scene[(snake.get(0).row) % scene.length][snake.get(0).col];
                     break;
                 case 'd':
                     snake.get(0).col = (snake.get(0).col + 1) % scene[0].length;
-                    snake.get(0).pos = scene[(snake.get(0).row) % scene.length][snake.get(0).col];
                     break;
             }
-            System.out.println(snake.get(0));
+            snake.get(0).pos = scene[(snake.get(0).row) % scene.length][snake.get(0).col];
+            // --------------- set Pos --------------- //
+            // --------------- setcolor --------------//
             snake.get(0).pos.setBackground(Color.green);
             snakeTail.setBackground(Color.BLACK);
             System.out.println(snake);
+             // --------------- setcolor --------------//
             // if(canbrake){
             //     break;
             // }
