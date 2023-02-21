@@ -27,6 +27,8 @@ public class Game extends JFrame implements KeyListener{
                 add(scene[i][j]);
             }
         }
+
+        // ------------------ TEST ------------------------//
         snake.add(new snakeposXY(20,50,scene[20][50]));
         snake.add(new snakeposXY(20,50,scene[20][50]));
         snake.add(new snakeposXY(20,50,scene[20][50]));
@@ -40,6 +42,7 @@ public class Game extends JFrame implements KeyListener{
         snake.add(new snakeposXY(20,50,scene[20][50]));
         snake.add(new snakeposXY(20,50,scene[20][50]));
         snake.add(new snakeposXY(20,50,scene[20][50]));
+         // ------------------ TEST ------------------------//
     }
 
     private void move(char command){
@@ -59,21 +62,20 @@ public class Game extends JFrame implements KeyListener{
             }
             switch(command){
                 case 'w' :
-                    snake.get(0).pos = scene[(snake.get(0).row - 1) % scene.length][snake.get(0).col];
                     snake.get(0).row = (snake.get(0).row - 1) % scene.length;
+                    snake.get(0).pos = scene[(snake.get(0).row) % scene.length][snake.get(0).col];
                     break;
                 case 's':
-                    snake.get(0).pos = scene[(snake.get(0).row + 1) % scene.length][snake.get(0).col];
                     snake.get(0).row = (snake.get(0).row + 1) % scene.length;
+                    snake.get(0).pos = scene[(snake.get(0).row) % scene.length][snake.get(0).col];
                     break;
                 case 'a':
-                    System.out.println(snake);
-                    snake.get(0).pos = scene[snake.get(0).row % scene.length][((snake.get(0).col - 1)) % scene[0].length];
                     snake.get(0).col = (snake.get(0).col - 1) % scene[0].length;
+                    snake.get(0).pos = scene[(snake.get(0).row) % scene.length][snake.get(0).col];
                     break;
                 case 'd':
-                    snake.get(0).pos = scene[snake.get(0).row % scene.length][(snake.get(0).col + 1) % scene[0].length];
                     snake.get(0).col = (snake.get(0).col + 1) % scene[0].length;
+                    snake.get(0).pos = scene[(snake.get(0).row) % scene.length][snake.get(0).col];
                     break;
             }
             System.out.println(snake.get(0));
