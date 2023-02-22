@@ -63,7 +63,6 @@ public class Game extends JPanel implements ActionListener{
         snake.get(0).pos = scene[(snake.get(0).row) % scene.length][snake.get(0).col];
         snake.get(0).pos.setBackground(Color.green);
         snakeTail.setBackground(Color.BLACK);
-
     }
 
     @Override public void actionPerformed(ActionEvent ev){
@@ -73,11 +72,14 @@ public class Game extends JPanel implements ActionListener{
     private class KeyboardGame extends KeyAdapter{
         public void keyPressed(KeyEvent e){
             int keyPress = e.getKeyCode();
-            switch(keyPress){
-                case KeyEvent.VK_W: command = 'w';break;
-                case KeyEvent.VK_S: command = 's';break;
-                case KeyEvent.VK_A: command = 'a';break;
-                case KeyEvent.VK_D: command = 'd'; break;
+            if(keyPress == KeyEvent.VK_W && command != 's'){
+                command = 'w';
+            }else if(keyPress == KeyEvent.VK_S && command != 'w'){
+                command = 's';
+            }else if(keyPress == KeyEvent.VK_A && command != 'd'){
+                command = 'a';
+            }else if(keyPress == KeyEvent.VK_D && command != 'a'){
+                command = 'd';
             }
         }
     }
