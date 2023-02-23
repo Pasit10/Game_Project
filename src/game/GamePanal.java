@@ -2,12 +2,14 @@ package src.game;
 import src.game.gamesrc.*;
 import java.awt.*;
 import java.awt.event.*;
+
 import javax.swing.*;
 
 public class GamePanal extends JPanel implements ActionListener{
     protected JPanel[][] scene = new JPanel[80][80];
-    private char command = 'd';
+    private char command;
     private Snake snake = new Snake(scene);
+    //private Fruit f = new Fruit();
     Timer t = new Timer(100, this);
     public GamePanal(){
         setLayout(new GridLayout(80,80));

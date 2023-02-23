@@ -3,6 +3,7 @@ package src.game.gamesrc;
 import java.awt.*;
 import javax.swing.*;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Snake{
     private JPanel[][] scene;
@@ -10,8 +11,11 @@ public class Snake{
 
     public Snake(JPanel[][] s) {
         scene = s;
-        snake.add(new snakeposXY(10, 10));
-        snake.add(new snakeposXY(11, 10));
+        Random rn = new Random();
+        int x = rn.nextInt(scene.length);
+        int y = rn.nextInt(scene[0].length);
+        snake.add(new snakeposXY(x, y));
+        snake.add(new snakeposXY(x, y));
         System.out.println(snake);
     }
 
