@@ -26,7 +26,7 @@ public class Game extends JPanel implements ActionListener{
             }
         }
         // ------------------ TEST ------------------------//
-        for(int i = 0;i < 20;i++){
+        for(int i = 0;i < 100;i++){
             snake.add(new snakeposXY(10,10));
         }
          // ------------------ TEST ------------------------//
