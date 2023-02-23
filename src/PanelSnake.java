@@ -1,5 +1,4 @@
-package SnakeGame;
-
+package src;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
@@ -21,7 +20,7 @@ public class PanelSnake extends JPanel implements ActionListener{
     int x=0;
     int y=0;
 
-    PanelSnake(){
+    public PanelSnake(){
         this.setPreferredSize(new Dimension(Panel_WIDTH,Panel_HEIGHT));
         this.setBackground(Color.BLACK);
         Snake = new ImageIcon("IMG/snakePng80.png").getImage();

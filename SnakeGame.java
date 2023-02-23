@@ -1,6 +1,6 @@
-package SnakeGame;
 import javax.swing.*;
 import java.awt.*;
+import src.*;
 
 public class SnakeGame extends JFrame{
 
