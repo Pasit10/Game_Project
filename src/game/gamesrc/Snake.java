@@ -54,7 +54,7 @@ public class Snake{
                 snake.get(0).col = (snake.get(0).col + 1) % scene[0].length;
                 break;
         }
-        if(snake.size() > 2) checkHitBody();
+        if(snake.size() > 2) checkHitBody(); 
         if(fruit.CheckHitSnake(snake.get(0).row,snake.get(0).col)) addTail();
         scene[(snake.get(0).row) % scene.length][snake.get(0).col].setBackground(Color.GREEN);
     }

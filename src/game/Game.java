@@ -2,7 +2,7 @@ package src.game;
 import src.game.gamesrc.*;
 import java.awt.*;
 import java.awt.event.*;
-
+import java.util.Random;
 import javax.swing.*;
 
 public class Game extends JPanel implements ActionListener{
@@ -10,7 +10,9 @@ public class Game extends JPanel implements ActionListener{
     private char command;
     private Fruit fruit = new Fruit(scene);
     private Snake snake = new Snake(fruit,scene);
+    private Random rn = new Random();
     private int state = 0;
+    private int maxstate = rn.nextInt(60);
 
     Timer t = new Timer(100, this);
     public Game(){
@@ -30,11 +32,13 @@ public class Game extends JPanel implements ActionListener{
                 add(scene[i][j]);
             }
         }
+        fruit.setPosApple();
     }
 
     @Override public void actionPerformed(ActionEvent ev){
-        if(state == 60){
+        if(state == maxstate){
             state = 0;
+            maxstate = rn.nextInt(60);
             fruit.setPosApple();
         }
         state++;
