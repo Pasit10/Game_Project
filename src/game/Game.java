@@ -38,7 +38,6 @@ public class Game extends JPanel implements ActionListener{
             fruit.setPosApple();
         }
         state++;
-        //System.out.println(state);
         snake.move(command);
     }
 
