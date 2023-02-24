@@ -7,9 +7,11 @@ import java.util.Random;
 
 public class Snake{
     private JPanel[][] scene;
-    private ArrayList<snakeposXY> snake = new ArrayList<>();
+    private Fruit fruit;
+    protected ArrayList<snakeposXY> snake = new ArrayList<>();
 
-    public Snake(JPanel[][] s) {
+    public Snake(Fruit f,JPanel[][] s) {
+        fruit = f;
         scene = s;
         Random rn = new Random();
         int x = rn.nextInt(scene.length);
@@ -32,28 +34,38 @@ public class Snake{
             snake.get(j).col = snake.get(j - 1).col;
         }
         // --------------- set Pos --------------- //
-        if(snake.get(0).row - 1 < 0){
-            snake.get(0).row = scene.length;
-        }
-        if(snake.get(0).col - 1 < 0){
-            snake.get(0).col = scene[0].length;
-        }
         switch(command){
             case 'w' :
+                if(snake.get(0).row - 1 < 0){
+                    snake.get(0).row = scene.length;
+                }
                 snake.get(0).row = (snake.get(0).row - 1) % scene.length;
                 break;
             case 's':
                 snake.get(0).row = (snake.get(0).row + 1) % scene.length;
                 break;
             case 'a':
+                if(snake.get(0).col - 1 < 0){
+                    snake.get(0).col = scene[0].length;
+                }
                 snake.get(0).col = (snake.get(0).col - 1) % scene[0].length;
                 break;
             case 'd':
                 snake.get(0).col = (snake.get(0).col + 1) % scene[0].length;
                 break;
         }
+        if(snake.size() > 2) checkHitBody();
+        if(fruit.CheckHitSnake(snake.get(0).row,snake.get(0).col)) addTail();
         scene[(snake.get(0).row) % scene.length][snake.get(0).col].setBackground(Color.GREEN);
     }
+
+    private void checkHitBody(){
+        for(int i = 1;i < snake.size();i++){
+            if(snake.get(i).row == snake.get(0).row && snake.get(i).col == snake.get(0).col)
+                System.exit(1);
+        }
+    }
+
 
     private class snakeposXY{
         int row , col;

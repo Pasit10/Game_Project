@@ -5,14 +5,16 @@ import java.awt.event.*;
 
 import javax.swing.*;
 
-public class GamePanal extends JPanel implements ActionListener{
-    protected JPanel[][] scene = new JPanel[80][80];
+public class Game extends JPanel implements ActionListener{
+    private JPanel[][] scene = new JPanel[40][60];
     private char command;
-    private Snake snake = new Snake(scene);
-    //private Fruit f = new Fruit();
+    private Fruit fruit = new Fruit(scene);
+    private Snake snake = new Snake(fruit,scene);
+    private int state = 0;
+
     Timer t = new Timer(100, this);
-    public GamePanal(){
-        setLayout(new GridLayout(80,80));
+    public Game(){
+        setLayout(new GridLayout(40,60));
         addKeyListener(new KeyboardGame());
         GameComponent();
         setFocusable(true);
@@ -31,6 +33,12 @@ public class GamePanal extends JPanel implements ActionListener{
     }
 
     @Override public void actionPerformed(ActionEvent ev){
+        if(state == 60){
+            state = 0;
+            fruit.setPosApple();
+        }
+        state++;
+        //System.out.println(state);
         snake.move(command);
     }
 
@@ -52,8 +60,8 @@ public class GamePanal extends JPanel implements ActionListener{
     public static void main(String[] args) {
         JFrame x = new JFrame();
         x.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        x.setSize(1000,1000);
-        x.add(new GamePanal());
+        x.setSize(800,500);
+        x.add(new Game());
         x.setVisible(true);
     }
 }
