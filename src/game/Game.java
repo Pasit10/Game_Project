@@ -40,6 +40,7 @@ public class Game extends JPanel implements ActionListener{
             state = 0;
             maxstate = rn.nextInt(60);
             fruit.setPosApple();
+            System.out.println(maxstate);
         }
         state++;
         snake.move(command);
@@ -48,13 +49,13 @@ public class Game extends JPanel implements ActionListener{
     private class KeyboardGame extends KeyAdapter{
         public void keyPressed(KeyEvent e){
             int keyPress = e.getKeyCode();
-            if(keyPress == KeyEvent.VK_W && command != 's'){
+            if((keyPress == KeyEvent.VK_W || keyPress == KeyEvent.VK_UP ) && command != 's'){
                 command = 'w';
-            }else if(keyPress == KeyEvent.VK_S && command != 'w'){
+            }else if((keyPress == KeyEvent.VK_S || keyPress == KeyEvent.VK_DOWN ) && command != 'w'){
                 command = 's';
-            }else if(keyPress == KeyEvent.VK_A && command != 'd'){
+            }else if((keyPress == KeyEvent.VK_A || keyPress == KeyEvent.VK_LEFT ) && command != 'd'){
                 command = 'a';
-            }else if(keyPress == KeyEvent.VK_D && command != 'a'){
+            }else if((keyPress == KeyEvent.VK_D || keyPress == KeyEvent.VK_RIGHT ) && command != 'a'){
                 command = 'd';
             }
         }

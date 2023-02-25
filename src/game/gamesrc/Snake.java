@@ -23,6 +23,7 @@ public class Snake{
 
     public void addTail(){
         snake.add(new Pos(snake.get(snake.size() - 1).row, snake.get(snake.size() - 1).col));
+        System.out.println(snake.size());
     }
 
     public void move(char command){
@@ -53,7 +54,6 @@ public class Snake{
         if(snake.size() > 2) checkHitBody(); 
         if(fruit.CheckHitSnake(snake.get(0).row,snake.get(0).col)) addTail();
         scene[(snake.get(0).row) % scene.length][snake.get(0).col].setBackground(Color.GREEN);
-        System.out.println(snake.size());
     }
 
     private void checkHitBody(){

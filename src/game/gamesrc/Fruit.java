@@ -14,10 +14,12 @@ public class Fruit {
     }
 
     public void setPosApple(){
-        int x = rn.nextInt(p.length) ,y = rn.nextInt(p[0].length);
-        AllFruit.add(new Pos(x, y));
-        p[x][y].setBackground(Color.red);
-        //System.out.println(AllFruit);
+        if(AllFruit.size() < 10){
+            int x = rn.nextInt(p.length) ,y = rn.nextInt(p[0].length);
+            AllFruit.add(new Pos(x, y));
+            p[x][y].setBackground(Color.red);
+        }
+        System.out.println(AllFruit);
     }
 
     public boolean CheckHitSnake(int x,int y){
