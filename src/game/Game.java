@@ -36,7 +36,7 @@ public class Game extends JPanel implements ActionListener{
     }
 
     @Override public void actionPerformed(ActionEvent ev){
-        if(state == maxstate){
+        if(state >= maxstate){
             state = 0;
             maxstate = rn.nextInt(60);
             fruit.setPosApple();
