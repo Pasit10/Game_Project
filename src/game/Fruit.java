@@ -1,4 +1,4 @@
-package src.game.gamesrc;
+package src.game;
 
 import java.awt.Color;
 import java.util.Random;
@@ -9,11 +9,11 @@ public class Fruit {
     private JPanel[][] p;
     private ArrayList<Pos> AllFruit = new ArrayList<>();
     private Random rn = new Random();
-    public Fruit(JPanel[][] p){
+    protected Fruit(JPanel[][] p){
         this.p = p;
     }
 
-    public void setPosApple(){
+    protected void setPosApple(){
         if(AllFruit.size() < 10){
             int x = rn.nextInt(p.length) ,y = rn.nextInt(p[0].length);
             AllFruit.add(new Pos(x, y));
@@ -22,7 +22,7 @@ public class Fruit {
         System.out.println(AllFruit);
     }
 
-    public boolean CheckHitSnake(int x,int y){
+    protected boolean CheckHitSnake(int x,int y){
         for(int i = 0;i < AllFruit.size();i++){
             if(AllFruit.get(i).row == x && AllFruit.get(i).col == y){
                 AllFruit.remove(i);

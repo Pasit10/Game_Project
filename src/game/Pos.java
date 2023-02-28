@@ -1,4 +1,4 @@
-package src.game.gamesrc;
+package src.game;
 
 class Pos {
     int row;

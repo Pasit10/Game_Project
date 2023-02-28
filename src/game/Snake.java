@@ -1,4 +1,4 @@
-package src.game.gamesrc;
+package src.game;
 
 import java.awt.*;
 import javax.swing.*;
@@ -10,7 +10,7 @@ public class Snake{
     private Fruit fruit;
     protected ArrayList<Pos> snake = new ArrayList<>();
 
-    public Snake(Fruit f,JPanel[][] s) {
+    protected Snake(Fruit f,JPanel[][] s) {
         fruit = f;
         scene = s;
         Random rn = new Random();
@@ -21,12 +21,12 @@ public class Snake{
         System.out.println(snake);
     }
 
-    public void addTail(){
+    private void addTail(){
         snake.add(new Pos(snake.get(snake.size() - 1).row, snake.get(snake.size() - 1).col));
         System.out.println(snake.size());
     }
 
-    public void move(char command){
+    protected void move(char command){
         int x = snake.get(snake.size() - 1).row;
         int y = snake.get(snake.size() - 1).col;
         scene[x][y].setBackground(Color.BLACK);

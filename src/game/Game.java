@@ -1,5 +1,4 @@
 package src.game;
-import src.game.gamesrc.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.Random;
@@ -19,6 +18,7 @@ public class Game extends JPanel implements ActionListener{
         setLayout(new GridLayout(40,60));
         addKeyListener(new KeyboardGame());
         GameComponent();
+        new ImageIcon("IMG/tree-background.jpg");
         setFocusable(true);
         t.start();
     }
