@@ -18,7 +18,6 @@ public class Game extends JPanel implements ActionListener{
         setLayout(new GridLayout(40,60));
         addKeyListener(new KeyboardGame());
         GameComponent();
-        new ImageIcon("IMG/tree-background.jpg");
         setFocusable(true);
         t.start();
     }
