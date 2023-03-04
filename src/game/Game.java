@@ -5,6 +5,7 @@ import java.util.Random;
 import javax.swing.*;
 
 public class Game extends JPanel implements ActionListener{
+    private int speed = 150;
     private JPanel[][] scene = new JPanel[40][60];
     private char command;
     private Fruit fruit = new Fruit(scene);
@@ -12,8 +13,9 @@ public class Game extends JPanel implements ActionListener{
     private Random rn = new Random();
     private int state = 0;
     private int maxstate = rn.nextInt(60);
+    private int changeTimer = 0;
 
-    Timer t = new Timer(100, this);
+    Timer t = new Timer(speed, this);
     public Game(){
         setLayout(new GridLayout(40,60));
         addKeyListener(new KeyboardGame());
@@ -41,7 +43,15 @@ public class Game extends JPanel implements ActionListener{
             fruit.setPosApple();
             System.out.println(maxstate);
         }
+        if(changeTimer >= 100 && speed > 50){
+            changeTimer = 0;
+            speed -= 2;
+            System.out.println(speed + " speed ");
+            t.setDelay(speed);
+        }
         state++;
+        changeTimer++;
+        System.out.println(changeTimer);
         snake.move(command);
     }
 
@@ -56,6 +66,8 @@ public class Game extends JPanel implements ActionListener{
                 command = 'a';
             }else if((keyPress == KeyEvent.VK_D || keyPress == KeyEvent.VK_RIGHT ) && command != 'a'){
                 command = 'd';
+            }else if(keyPress == KeyEvent.VK_SHIFT){
+                t.setDelay(1);
             }
         }
     }

@@ -60,11 +60,12 @@ public class Snake{
     private void checkHitBody(){
         for(int i = 1;i < snake.size();i++){
             if(snake.get(i).row == snake.get(0).row && snake.get(i).col == snake.get(0).col){
-                for(int j = snake.size() - 1;j > i;j--){
-                    scene[snake.get(j).row][snake.get(j).col].setBackground(Color.BLACK);
-                    snake.remove(snake.size() - 1);
-                }
-                break;
+                System.exit(1);
+                // for(int j = snake.size() - 1;j > i;j--){
+                //     scene[snake.get(j).row][snake.get(j).col].setBackground(Color.BLACK);
+                //     snake.remove(snake.size() - 1);
+                // }
+                // break;
             }
         }
     }
