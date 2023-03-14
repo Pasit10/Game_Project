@@ -1,9 +1,13 @@
+//package SnakeGame;
+
 import javax.swing.*;
 import java.awt.*;
 import src.*;
+import src.game.Game;
 
 public class SnakeGame extends JFrame{
 
+    Game game;
     PanelSnake panels;
 
     

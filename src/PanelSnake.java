@@ -23,8 +23,8 @@ public class PanelSnake extends JPanel implements ActionListener{
     public PanelSnake(){
         this.setPreferredSize(new Dimension(Panel_WIDTH,Panel_HEIGHT));
         this.setBackground(Color.BLACK);
-        Snake = new ImageIcon("IMG/snakePng80.png").getImage();
-        background = new ImageIcon("IMG/tree-background.jpg").getImage();
+        Snake = new ImageIcon("IMG/Cat08.png").getImage();
+        background = new ImageIcon("IMG/nyancat500-background.jpg").getImage();
         SNAKEGAME = new ImageIcon("IMG/SNAKEGAME400.png").getImage();
         easy = new ImageIcon("IMG/Easy200.png").getImage();
         normal = new ImageIcon("IMG/Normal200.png").getImage();
