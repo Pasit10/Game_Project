@@ -36,25 +36,27 @@ public class Snake{
             scene[snake.get(j).row][snake.get(j).col].setBackground(Color.GREEN);
         }
         // --------------- set Pos --------------- //
-        switch(command){
-            case 'w' :
-                if(snake.get(0).row - 1 < 0) snake.get(0).row = scene.length;
-                snake.get(0).row = (snake.get(0).row - 1) % scene.length;
-                break;
-            case 's':
-                snake.get(0).row = (snake.get(0).row + 1) % scene.length;
-                break;
-            case 'a':
-                if(snake.get(0).col - 1 < 0) snake.get(0).col = scene[0].length;
-                snake.get(0).col = (snake.get(0).col - 1) % scene[0].length;
-                break;
-            case 'd':
-                snake.get(0).col = (snake.get(0).col + 1) % scene[0].length;
-                break;
+        try{
+            switch(command){
+                case 'w' :
+                    snake.get(0).row = (snake.get(0).row - 1);
+                    break;
+                case 's':
+                    snake.get(0).row = (snake.get(0).row + 1);
+                    break;
+                case 'a':
+                    snake.get(0).col = (snake.get(0).col - 1); 
+                    break;
+                case 'd':
+                    snake.get(0).col = (snake.get(0).col + 1);
+                    break;
+            }
+            scene[(snake.get(0).row)][snake.get(0).col].setBackground(Color.YELLOW);
+        }catch(ArrayIndexOutOfBoundsException ArrOutOfbound){
+            System.exit(1);
         }
         if(snake.size() > 2) checkHitBody(); 
         if(fruit.CheckHitSnake(snake.get(0).row,snake.get(0).col)) addTail();
-        scene[(snake.get(0).row) % scene.length][snake.get(0).col].setBackground(Color.YELLOW);
     }
 
     private void checkHitBody(){

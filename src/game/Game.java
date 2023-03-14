@@ -66,8 +66,6 @@ public class Game extends JPanel implements ActionListener{
                 command = 'a';
             }else if((keyPress == KeyEvent.VK_D || keyPress == KeyEvent.VK_RIGHT ) && command != 'a'){
                 command = 'd';
-            }else if(keyPress == KeyEvent.VK_SHIFT){
-                t.setDelay(1);
             }
         }
     }
