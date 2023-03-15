@@ -23,8 +23,8 @@ public class SnakeGame extends JFrame{
     }
 
     // private void detailBoard(){
-    // }
-    
+        // }
+        
     public static void main(String[] args) {
         new SnakeGame();
     }
