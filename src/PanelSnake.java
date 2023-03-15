@@ -61,6 +61,7 @@ public class PanelSnake extends JPanel implements ActionListener, MouseListener{
         bgimage = new JLabel(new ImageIcon("IMG/nyancat500-background.jpg"));
         bgimage.setBounds(0, 0, 800, 500);
         this.add(bgimage);
+
        
 
     }
@@ -100,10 +101,6 @@ public class PanelSnake extends JPanel implements ActionListener, MouseListener{
             yVelocity2 = yVelocity2 * -1;
         }
         y2 = y2 + yVelocity2;
-
-
-
-
         repaint();
     }
 
