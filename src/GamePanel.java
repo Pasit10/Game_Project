@@ -1,3 +1,4 @@
+package src;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
@@ -5,8 +6,8 @@ import java.util.Random;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 public class GamePanel extends JPanel implements ActionListener {
-    static final int SCREEN_WIDTH = 1920;
-    static final int SCREEN_HEIGHT = 1080;
+    static final int SCREEN_WIDTH = 800;
+    static final int SCREEN_HEIGHT = 500;
     static final int UNIT_SIZE = 25;
     static final int GAME_UNITS = (SCREEN_WIDTH*SCREEN_HEIGHT)/UNIT_SIZE;
     static final int DELAY = 120;
@@ -23,7 +24,7 @@ public class GamePanel extends JPanel implements ActionListener {
     Random random;
     GamePanel(){
         random = new Random();
-        this.setPreferredSize(new Dimension(SCREEN_HEIGHT,SCREEN_WIDTH));
+        this.setPreferredSize(new Dimension(SCREEN_WIDTH,SCREEN_HEIGHT));
         this.setBackground(Color.black);
         this.setFocusable(true);
         addKeyListener(new MyKeyAdapter());
@@ -89,7 +90,6 @@ public class GamePanel extends JPanel implements ActionListener {
             case 'R':
                 x[0] = x[0] + UNIT_SIZE;
                 break;
-
         }
     }
     public void checkApple(){
