@@ -12,7 +12,6 @@ public class SnakeGame extends JFrame{
     
     public SnakeGame() {
         panels = new PanelSnake();
-
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setSize(800, 500);
         this.add(panels);   

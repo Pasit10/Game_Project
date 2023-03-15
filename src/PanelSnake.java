@@ -41,9 +41,8 @@ public class PanelSnake extends JPanel implements ActionListener, MouseListener{
         timer = new Timer(1, this);
         timer.start();
 
-
-
-    
+        //this.setLayout(new BorderLayout()); 
+            
         Butplay = new JButton("");
         Butplay.setSize(200, 100);
         Butplay.setContentAreaFilled(false); //not show layout behind the button
@@ -57,14 +56,15 @@ public class PanelSnake extends JPanel implements ActionListener, MouseListener{
         bgimage.setBounds(0, 0, 800, 500);
         this.add(bgimage);
        
+
     }
 
     public void paint(Graphics g){
         Graphics2D g2D = (Graphics2D)g;
         super.paint(g); //setBackground
         //g2D.drawImage(background, 0, 0, null);
-        g2D.drawImage(CAT, x, y, null);
         g2D.drawImage(CATGAME, 80, 50, null);
+        g2D.drawImage(CAT, x, y, null);
         // g2D.drawImage(easy, 300, 200, null);
         // g2D.drawImage(normal, 300, 250, null);
         // g2D.drawImage(hard, 300, 300, null)  ;
