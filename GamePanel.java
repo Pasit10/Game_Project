@@ -3,35 +3,30 @@ import java.awt.event.*;
 import javax.swing.*;
 import java.util.Random;
 import java.awt.event.KeyEvent;
-
-
-
-
-
+import java.util.ArrayList;
 public class GamePanel extends JPanel implements ActionListener {
-
-    static final int SCREEN_WIDTH = 600;
-    static final int SCREEN_HEIGHT = 600;
+    static final int SCREEN_WIDTH = 1920;
+    static final int SCREEN_HEIGHT = 1080;
     static final int UNIT_SIZE = 25;
     static final int GAME_UNITS = (SCREEN_WIDTH*SCREEN_HEIGHT)/UNIT_SIZE;
-    static final int DELAY = 75;
+    static final int DELAY = 120;
     final int x[] = new int[GAME_UNITS];
     final int y[] = new int[GAME_UNITS];
-    int bodyParts = 6;
-    int appleEaten;
-    int appleX;
-    int appleY;
+    int bodyParts = 3;
+    int appleEaten = 0;
+    int count = 90;
+    ArrayList<Integer> allAppleX = new ArrayList<>();
+    ArrayList<Integer> allAppleY = new ArrayList<>();
     char direction = 'R';
     boolean running = false;
     Timer timer;
     Random random;
-
     GamePanel(){
         random = new Random();
         this.setPreferredSize(new Dimension(SCREEN_HEIGHT,SCREEN_WIDTH));
         this.setBackground(Color.black);
         this.setFocusable(true);
-        this.addKeyListener(new MyKeyAdapter());
+        addKeyListener(new MyKeyAdapter());
         startGame();
     }
 
@@ -40,20 +35,20 @@ public class GamePanel extends JPanel implements ActionListener {
         running = true;
         timer = new Timer(DELAY,this);
         timer.start();
-
     }
     public void paintComponent(Graphics g){
         super.paintComponent(g);
         draw(g);
     }
     public void draw(Graphics g){
-
         for(int i = 0; i < SCREEN_HEIGHT/UNIT_SIZE; i++){
             g.drawLine(i*UNIT_SIZE, 0, i*UNIT_SIZE, SCREEN_HEIGHT); // grid x line
             g.drawLine(0, i*UNIT_SIZE, SCREEN_WIDTH, i*UNIT_SIZE);
         }
         g.setColor(Color.red);
-        g.fillOval(appleX, appleY, UNIT_SIZE, UNIT_SIZE);
+        for(int i = 0;i < allAppleX.size();i++){
+            g.fillOval(allAppleX.get(i), allAppleY.get(i), UNIT_SIZE, UNIT_SIZE);
+        }
 
         for(int i = 0; i < bodyParts; i++){
             if(i==0){
@@ -67,10 +62,15 @@ public class GamePanel extends JPanel implements ActionListener {
         }
     }
     public void newApple(){
-        appleX = random.nextInt((int)SCREEN_WIDTH/UNIT_SIZE)*UNIT_SIZE;
-        appleY = random.nextInt((int)SCREEN_WIDTH/UNIT_SIZE)*UNIT_SIZE;
+        if(allAppleX.size() > 5){
+            return;
+        }
+        int appleX = random.nextInt((int)SCREEN_WIDTH/UNIT_SIZE)*UNIT_SIZE;
+        int appleY = random.nextInt((int)SCREEN_WIDTH/UNIT_SIZE)*UNIT_SIZE;
+        allAppleX.add(appleX);
+        allAppleY.add(appleY);
     }
-    public void move(){
+    public void move(char direction){
         for(int i = bodyParts; i > 0; i--){
             x[i] = x[i-1];
             y[i] = y[i-1];
@@ -93,7 +93,15 @@ public class GamePanel extends JPanel implements ActionListener {
         }
     }
     public void checkApple(){
-
+        for(int i = 0;i < allAppleX.size();i++){
+            if(allAppleX.get(i) == x[0] && allAppleY.get(i) == y[0]){
+                appleEaten++;
+                bodyParts++;
+                newApple();
+                allAppleX.remove(i);
+                allAppleY.remove(i);
+            }
+        }
     }
     public void checkCollision(){
         // check head crash body
@@ -119,31 +127,43 @@ public class GamePanel extends JPanel implements ActionListener {
             running = false;
         }
         if(running == false){
+            gameOver();
             timer.stop();
         }
-
-
-
-
     }
     public void gameOver(){
-
+        
     }
     @Override
     public void actionPerformed(ActionEvent e) {
-        
         if(running){
-            move();
+            move(direction);
             checkApple();
             checkCollision();
         }
+        if(count <= 0){
+            newApple();
+            count = 90;
+        }
+        System.out.println(count);
+        count--;
         repaint();
     }
 
-    public class MyKeyAdapter extends KeyAdapter{
-        @Override
-        public void KeyPressed(KeyEvent e){
-
+    private class MyKeyAdapter extends KeyAdapter{
+        //@Override
+        public void keyPressed(KeyEvent e){
+            int keyPress = e.getKeyCode();
+            if((keyPress == KeyEvent.VK_W || keyPress == KeyEvent.VK_UP ) && direction != 'D'){
+                direction = 'U';
+            }else if((keyPress == KeyEvent.VK_S || keyPress == KeyEvent.VK_DOWN ) && direction != 'U'){
+                direction = 'D';
+            }else if((keyPress == KeyEvent.VK_A || keyPress == KeyEvent.VK_LEFT ) && direction != 'R'){
+                direction = 'L';
+            }else if((keyPress == KeyEvent.VK_D || keyPress == KeyEvent.VK_RIGHT ) && direction != 'L'){
+                direction = 'R';
+            }
+            //System.out.println(direction);
         }
     }
     

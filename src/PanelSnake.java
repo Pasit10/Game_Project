@@ -31,10 +31,7 @@ public class PanelSnake extends JPanel implements ActionListener{
         hard = new ImageIcon("IMG/Hard200.png").getImage();
         timer = new Timer(1, this);
         timer.start();
-
         //this.setLayout(new BorderLayout()); 
-
-
     }
 
     public void paint(Graphics g){
