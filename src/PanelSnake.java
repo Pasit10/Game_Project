@@ -8,7 +8,8 @@ public class PanelSnake extends JPanel implements ActionListener, MouseListener{
     
     final int Panel_WIDTH = 800;
     final int Panel_HEIGHT = 500;
-    Image CAT; 
+    Image CAT1; 
+    Image CAT2; 
     Image background;
     Image CATGAME;
     // Image easy;
@@ -17,10 +18,14 @@ public class PanelSnake extends JPanel implements ActionListener, MouseListener{
     ImageIcon Play1;
     ImageIcon Play2;
     Timer timer;
-    int xVelocity = 1;
-    int yVelocity = 1;
-    int x=0;
-    int y=0;
+    int xVelocity1 = 1;
+    int yVelocity1 = 1;
+    int xVelocity2 = 2;
+    int yVelocity2 = 1;
+    int x1=(int)(Math.random()*100);
+    int y1=(int)(Math.random()*100);
+    int x2=(int)(Math.random()*100)+300;
+    int y2=(int)(Math.random()*100)+300;
     // JLabel play;
     JButton Butplay;
     JLabel bgimage;
@@ -30,7 +35,8 @@ public class PanelSnake extends JPanel implements ActionListener, MouseListener{
         this.setPreferredSize(new Dimension(Panel_WIDTH,Panel_HEIGHT));
         this.setBackground(Color.BLACK);
 
-        CAT = new ImageIcon("IMG/Cat08.png").getImage();
+        CAT1 = new ImageIcon("IMG/Cat4.png").getImage().getScaledInstance(106, 70, Image.SCALE_DEFAULT);
+        CAT2 = new ImageIcon("IMG/Cat5.png").getImage().getScaledInstance(106, 70, Image.SCALE_DEFAULT);
         //background = new ImageIcon("IMG/nyancat500-background.jpg").getImage();
         CATGAME = new ImageIcon("IMG/CatgameName200.png").getImage();
         // easy = new ImageIcon("IMG/Easy200.png").getImage();
@@ -64,7 +70,8 @@ public class PanelSnake extends JPanel implements ActionListener, MouseListener{
         super.paint(g); //setBackground
         //g2D.drawImage(background, 0, 0, null);
         g2D.drawImage(CATGAME, 80, 50, null);
-        g2D.drawImage(CAT, x, y, null);
+        g2D.drawImage(CAT1, x1, y1, null);
+        g2D.drawImage(CAT2, x2, y2, null);
         // g2D.drawImage(easy, 300, 200, null);
         // g2D.drawImage(normal, 300, 250, null);
         // g2D.drawImage(hard, 300, 300, null)  ;
@@ -74,18 +81,33 @@ public class PanelSnake extends JPanel implements ActionListener, MouseListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(x>=Panel_WIDTH-CAT.getWidth(null) || x<0){
-            xVelocity = xVelocity * -1;
-            
+        if(x1>=Panel_WIDTH-CAT1.getWidth(null) || x1<0){
+            xVelocity1 = xVelocity1 * -1;
         }
-        x = x + xVelocity;
+        x1 = x1 + xVelocity1;
 
-        if(y>=Panel_HEIGHT-CAT.getHeight(null) || y<0){
-            yVelocity = yVelocity * -1;
+        if(y1>=Panel_HEIGHT-CAT1.getHeight(null) || y1<0){
+            yVelocity1 = yVelocity1 * -1;
         }
-        y = y + yVelocity;
+        y1 = y1 + yVelocity1;
+        ////////////////////////////////////////////////////////////////
+        if(x2>=Panel_WIDTH-CAT2.getWidth(null) || x2<0){
+            xVelocity2 = xVelocity2 * -1;
+        }
+        x2 = x2 + xVelocity2;
+
+        if(y2>=Panel_HEIGHT-CAT2.getHeight(null) || y2<0){
+            yVelocity2 = yVelocity2 * -1;
+        }
+        y2 = y2 + yVelocity2;
+
+
+
+
         repaint();
     }
+
+    
 
     @Override
     public void mouseClicked(MouseEvent e) {
@@ -114,14 +136,4 @@ public class PanelSnake extends JPanel implements ActionListener, MouseListener{
         Butplay.setIcon(Play1);
     }
 
-    public void displayButton(String name){
-        Butplay = new JButton(name);
-        Butplay.setSize(200, 100);
-        Butplay.setContentAreaFilled(false); //not show layout behind the button
-        Butplay.setBorderPainted(false); //ปิดขอบ
-        Butplay.setIcon(Play1);
-        Butplay.setBounds(255, 255, 260, 120);
-        Butplay.addMouseListener(this);
-        this.add(Butplay);
-    }
 }
