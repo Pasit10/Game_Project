@@ -76,6 +76,7 @@ public class PanelSnake extends JPanel implements ActionListener, MouseListener{
     public void actionPerformed(ActionEvent e) {
         if(x>=Panel_WIDTH-CAT.getWidth(null) || x<0){
             xVelocity = xVelocity * -1;
+            
         }
         x = x + xVelocity;
 
