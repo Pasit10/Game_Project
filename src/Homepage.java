@@ -10,6 +10,7 @@ public class Homepage extends JPanel implements ActionListener, MouseListener{
     final int Panel_HEIGHT = 500;
     Image CAT1; 
     Image CAT2; 
+    Image CAT3;
     Image background;
     Image CATGAME;
     ImageIcon Play1;
@@ -18,13 +19,17 @@ public class Homepage extends JPanel implements ActionListener, MouseListener{
     ImageIcon Aboutus2;
     Timer timer;
     int xVelocity1 = 1;
-    int yVelocity1 = 1;
+    int yVelocity1 = 2;
     int xVelocity2 = 2;
     int yVelocity2 = 1;
+    int xVelocity3 = 2;
+    int yVelocity3 = 2;
     int x1=(int)(Math.random()*100);
     int y1=(int)(Math.random()*100);
     int x2=(int)(Math.random()*100)+300;
     int y2=(int)(Math.random()*100)+300;
+    int x3=(int)(Math.random()*100)+150;
+    int y3=(int)(Math.random()*100)+150;
     // JLabel play;
     JButton Butplay;
     JButton Butaboutus;
@@ -37,6 +42,7 @@ public class Homepage extends JPanel implements ActionListener, MouseListener{
 
         CAT1 = new ImageIcon("IMG/Cat4.png").getImage().getScaledInstance(106, 70, Image.SCALE_DEFAULT);
         CAT2 = new ImageIcon("IMG/Cat5.png").getImage().getScaledInstance(106, 70, Image.SCALE_DEFAULT);
+        CAT3 = new ImageIcon("IMG/Cat6.png").getImage().getScaledInstance(116, 70, Image.SCALE_DEFAULT);
         //background = new ImageIcon("IMG/nyancat500-background.jpg").getImage();
         CATGAME = new ImageIcon("IMG/CatgameName200.png").getImage();
         Play1 = new ImageIcon(new ImageIcon("IMG/Play6200.png").getImage());
@@ -45,8 +51,6 @@ public class Homepage extends JPanel implements ActionListener, MouseListener{
         Aboutus2 = new ImageIcon(new ImageIcon("IMG/aboutus2.png").getImage().getScaledInstance(355, 200, Image.SCALE_DEFAULT));
         timer = new Timer(1, this);
         timer.start();
-
-        //this.setLayout(new BorderLayout()); 
             
         Butplay = new JButton("");
         //Butplay.setSize(200, 100);
@@ -81,6 +85,7 @@ public class Homepage extends JPanel implements ActionListener, MouseListener{
         g2D.drawImage(CATGAME, 80, 50, null);
         g2D.drawImage(CAT1, x1, y1, null);
         g2D.drawImage(CAT2, x2, y2, null);
+        g2D.drawImage(CAT3, x3, y3, null);
        
     }
 
@@ -106,6 +111,16 @@ public class Homepage extends JPanel implements ActionListener, MouseListener{
             yVelocity2 = yVelocity2 * -1;
         }
         y2 = y2 + yVelocity2;
+        ////////////////////////////////////////////////////////////////
+        if(x3>=Panel_WIDTH-CAT3.getWidth(null) || x3<0){
+            xVelocity3 = xVelocity3 * -1;
+        }
+        x3 = x3 + xVelocity3;
+
+        if(y3>=Panel_HEIGHT-CAT3.getHeight(null) || y3<0){
+            yVelocity3 = yVelocity3 * -1;
+        }
+        y3 = y3 + yVelocity3;
         repaint();
     }
 

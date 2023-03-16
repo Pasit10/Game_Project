@@ -46,7 +46,7 @@ public class AboutUs extends JFrame implements MouseListener{
         //Support = new ImageIcon("IMG/support.png").getImage().getScaledInstance(355, 200, Image.SCALE_DEFAULT);
         Support = new ImageIcon("IMG/support150.png").getImage();
         QR = new ImageIcon("IMG/Donate300.png").getImage();
-        Us = new ImageIcon("IMG/Us200.png").getImage();
+        Us = new ImageIcon("IMG/Us2240.png").getImage();
         //back = new ImageIcon("IMG/Arrow250.png").getImage();
         back = new ImageIcon(new ImageIcon("IMG/Arrow250.png").getImage());
 
