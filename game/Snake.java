@@ -6,11 +6,17 @@ import java.util.Random;
 public class Snake{
     private JLabel[][] scene;
     private Fruit fruit;
-    private Icon Headup = new ImageIcon("IMG/CatUp.png");
-    private Icon Headdown = new ImageIcon("IMG/CatDown.png");
-    private Icon Headleft = new ImageIcon("IMG/CatLeft.png");
-    private Icon Headright = new ImageIcon("IMG/CatRight.png");
-    private Icon Body = new ImageIcon("Cat10-4.png");
+    private Icon Headup = new ImageIcon("game/IMGFORGAME/CatUp.png");
+    private Icon Headdown = new ImageIcon("game/IMGFORGAME/CatDown.png");
+    private Icon Headleft = new ImageIcon("game/IMGFORGAME/CatLeft.png");
+    private Icon Headright = new ImageIcon("game/IMGFORGAME/CatRight.png");
+    private Icon body = new ImageIcon("game/IMGFORGAME/Rainbow-3 redup.png");
+    private Icon BodyredUp = new ImageIcon("game/IMGFORGAME/Rainbow-3 redup.png");
+    private Icon BodyredDown = new ImageIcon("game/IMGFORGAME/Rainbow-3 reddown.png");
+    private Icon Bodyupleft = new ImageIcon("game/IMGFORGAME/Rian-turn-1-1.png");
+    private Icon Bodyupright = new ImageIcon("game/IMGFORGAME/Rian-turn-1-2.png");
+    private Icon Bodydownleft = new ImageIcon("game/IMGFORGAME/Rian-turn-1-3.png");
+    private Icon Bodydownright = new ImageIcon("game/IMGFORGAME/Rian-turn-1-4.png");
     protected ArrayList<Pos> snake = new ArrayList<>();
 
     protected Snake(Fruit f,JLabel[][] s){
@@ -36,7 +42,7 @@ public class Snake{
         for(int j = snake.size() - 1; j > 0;j--){
             snake.get(j).row = snake.get(j - 1).row;
             snake.get(j).col = snake.get(j - 1).col;
-            scene[snake.get(j).row][snake.get(j).col].setIcon(Headright);
+            scene[snake.get(j).row][snake.get(j).col].setIcon(body);
         }
         // --------------- set Pos --------------- //
         try{
