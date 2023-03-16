@@ -55,7 +55,7 @@ public class Homepage extends JPanel implements ActionListener, MouseListener{
         //this.setLayout(new BorderLayout()); 
             
         Butplay = new JButton("");
-        Butplay.setSize(200, 100);
+        //Butplay.setSize(200, 100);
         Butplay.setContentAreaFilled(false); //not show layout behind the button
         Butplay.setBorderPainted(false); //ปิดขอบ
         Butplay.setIcon(Play1);
@@ -64,7 +64,7 @@ public class Homepage extends JPanel implements ActionListener, MouseListener{
         this.add(Butplay);
 
         Butaboutus = new JButton("");
-        Butaboutus.setSize(200, 100);
+        //Butaboutus.setSize(200, 100);
         Butaboutus.setContentAreaFilled(false); //not show layout behind the button
         Butaboutus.setBorderPainted(false); //ปิดขอบ
         Butaboutus.setIcon(Aboutus1);

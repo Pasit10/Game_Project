@@ -13,6 +13,8 @@ public class AboutUs extends JFrame{
     JLabel bgimage;
     Image Support;
     Image QR;
+    ImageIcon back;
+    JButton Butback;
 
     public AboutUs(){
         panels = new JPanel();
@@ -33,12 +35,25 @@ public class AboutUs extends JFrame{
         panels.setLayout(null);
         panels.setPreferredSize(new Dimension(WIDTH,HEIGHT));
         panels.setBackground(Color.BLACK);
+
         bgimage = new JLabel(new ImageIcon("IMG/nyancat500-background.jpg"));
         bgimage.setBounds(0, 0, 800, 500);
         panels.add(bgimage);
+
         //Support = new ImageIcon("IMG/support.png").getImage().getScaledInstance(355, 200, Image.SCALE_DEFAULT);
         Support = new ImageIcon("IMG/support150.png").getImage();
         QR = new ImageIcon("IMG/Donate300.png").getImage();
+
+        back = new ImageIcon(new ImageIcon("IMG/Arrow70.png").getImage());
+        Butback = new JButton("");
+        Butback.setBounds(0, 0, 100, 70);
+        //Butback.setContentAreaFilled(false);
+        //Butback.setBorder(null);
+        //Butback.setBorderPainted(false);
+        Butback.setIcon(back);
+        Butback.addMouseListener(panels);
+        panels.add(Butback);
+
 
     }
 
