@@ -8,6 +8,7 @@ public class Game extends JPanel implements ActionListener{
     private int x = 40;
     private int y = 80;
     private JLabel[][] snakescenes = new JLabel[x][y];
+    private JLabel[][] scenes = new JLabel[x][y];
     private char command;
     private Fruit fruit;
     private Snake snake;
@@ -21,6 +22,7 @@ public class Game extends JPanel implements ActionListener{
         setSize(800,500);
         setLayout(new GridLayout(x,y));
         addKeyListener(new KeyboardGame());
+        BackgroundComponent();
         GameComponent();
         fruit = new Fruit(snakescenes);
         snake = new Snake(fruit,snakescenes);
@@ -29,6 +31,16 @@ public class Game extends JPanel implements ActionListener{
         fruit.setPosApple();
     }
 
+    private void BackgroundComponent(){
+        for(int i = 0;i < scenes.length;i++){
+            for(int j = 0;j < scenes[0].length;j++){
+                scenes[i][j] = new JLabel();
+                scenes[i][j].setPreferredSize(new Dimension(30,30));
+                scenes[i][j].setIcon(new ImageIcon("game/orange600x600.jpg"));
+                add(scenes[i][j]);
+            }
+        }
+    }
 
     private void GameComponent(){
         for(int i = 0;i < snakescenes.length;i++){
