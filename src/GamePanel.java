@@ -22,6 +22,7 @@ public class GamePanel extends JPanel implements ActionListener {
     boolean running = false;
     Timer timer;
     Random random;
+    Image Head = new ImageIcon("IMG/Cat10.png").getImage().getScaledInstance(100, 100, Image.SCALE_DEFAULT);
     GamePanel(){
         random = new Random();
         this.setPreferredSize(new Dimension(SCREEN_WIDTH,SCREEN_HEIGHT));
@@ -53,8 +54,7 @@ public class GamePanel extends JPanel implements ActionListener {
 
         for(int i = 0; i < bodyParts; i++){
             if(i==0){
-                g.setColor(Color.green);
-                g.fillRect(x[i], y[i], UNIT_SIZE, UNIT_SIZE);
+                g.drawImage(Head,x[i],y[i],UNIT_SIZE, UNIT_SIZE, null);
             }
             else{
                 g.setColor(new Color(45,180,0));
@@ -71,7 +71,7 @@ public class GamePanel extends JPanel implements ActionListener {
         allAppleX.add(appleX);
         allAppleY.add(appleY);
     }
-    public void move(char direction){
+    public void move(){
         for(int i = bodyParts; i > 0; i--){
             x[i] = x[i-1];
             y[i] = y[i-1];
@@ -137,7 +137,7 @@ public class GamePanel extends JPanel implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if(running){
-            move(direction);
+            move();
             checkApple();
             checkCollision();
         }
@@ -163,7 +163,6 @@ public class GamePanel extends JPanel implements ActionListener {
             }else if((keyPress == KeyEvent.VK_D || keyPress == KeyEvent.VK_RIGHT ) && direction != 'L'){
                 direction = 'R';
             }
-            //System.out.println(direction);
         }
     }
     

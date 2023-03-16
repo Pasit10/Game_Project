@@ -49,9 +49,4 @@ public class AboutUs extends JFrame{
         g2D.drawImage(QR, 250, 180, null);
     }
 
-    public static void main(String[] args) {
-        new AboutUs();
-    }
-
-
 }

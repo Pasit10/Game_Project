@@ -132,7 +132,9 @@ public class Homepage extends JPanel implements ActionListener, MouseListener{
 
     @Override
     public void mouseReleased(MouseEvent e) {
-        System.out.println("You Peleased the mouse");
+        if(e.getSource() == Butaboutus){
+            new AboutUs();
+        }
     }
 
     @Override
