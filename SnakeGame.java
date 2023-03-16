@@ -7,14 +7,14 @@ import src.*;
 public class SnakeGame extends JFrame{
 
     Game game;
-    PanelSnake panels;
+    Homepage Home;
 
     
     public SnakeGame() {
-        panels = new PanelSnake();
+        Home = new Homepage();
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setSize(800, 500);
-        this.add(panels);   
+        this.add(Home);   
         this.pack();
         this.setLocationRelativeTo(null);
         this.setVisible(true);
@@ -22,7 +22,7 @@ public class SnakeGame extends JFrame{
 
     // private void detailBoard(){
         // }
-        
+           
     public static void main(String[] args) {
         new SnakeGame();
     }

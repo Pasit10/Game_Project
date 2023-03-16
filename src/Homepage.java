@@ -4,7 +4,7 @@ import java.awt.event.*;
 import javax.swing.*;
 
 
-public class PanelSnake extends JPanel implements ActionListener, MouseListener{
+public class Homepage extends JPanel implements ActionListener, MouseListener{
     
     final int Panel_WIDTH = 800;
     final int Panel_HEIGHT = 500;
@@ -17,6 +17,8 @@ public class PanelSnake extends JPanel implements ActionListener, MouseListener{
     // Image hard;
     ImageIcon Play1;
     ImageIcon Play2;
+    ImageIcon Aboutus1;
+    ImageIcon Aboutus2;
     Timer timer;
     int xVelocity1 = 1;
     int yVelocity1 = 1;
@@ -28,9 +30,10 @@ public class PanelSnake extends JPanel implements ActionListener, MouseListener{
     int y2=(int)(Math.random()*100)+300;
     // JLabel play;
     JButton Butplay;
+    JButton Butaboutus;
     JLabel bgimage;
 
-    public PanelSnake(){
+    public Homepage(){
         this.setLayout(null);
         this.setPreferredSize(new Dimension(Panel_WIDTH,Panel_HEIGHT));
         this.setBackground(Color.BLACK);
@@ -43,7 +46,9 @@ public class PanelSnake extends JPanel implements ActionListener, MouseListener{
         // normal = new ImageIcon("IMG/Normal200.png").getImage();
         // hard = new ImageIcon("IMG/Hard200.png").getImage();
         Play1 = new ImageIcon(new ImageIcon("IMG/Play6200.png").getImage());
-        Play2 = new ImageIcon(new ImageIcon("IMG/Play5200.png").getImage());
+        Play2 = new ImageIcon(new ImageIcon("IMG/Play7.png").getImage().getScaledInstance(267, 200, Image.SCALE_DEFAULT));
+        Aboutus1 = new ImageIcon(new ImageIcon("IMG/aboutus1.png").getImage().getScaledInstance(355, 200, Image.SCALE_DEFAULT));
+        Aboutus2 = new ImageIcon(new ImageIcon("IMG/aboutus2.png").getImage().getScaledInstance(355, 200, Image.SCALE_DEFAULT));
         timer = new Timer(1, this);
         timer.start();
 
@@ -54,9 +59,18 @@ public class PanelSnake extends JPanel implements ActionListener, MouseListener{
         Butplay.setContentAreaFilled(false); //not show layout behind the button
         Butplay.setBorderPainted(false); //ปิดขอบ
         Butplay.setIcon(Play1);
-        Butplay.setBounds(265, 255, 260, 120);
+        Butplay.setBounds(275, 245, 260, 120);
         Butplay.addMouseListener(this);
         this.add(Butplay);
+
+        Butaboutus = new JButton("");
+        Butaboutus.setSize(200, 100);
+        Butaboutus.setContentAreaFilled(false); //not show layout behind the button
+        Butaboutus.setBorderPainted(false); //ปิดขอบ
+        Butaboutus.setIcon(Aboutus1);
+        Butaboutus.setBounds(235, 320, 350, 120);
+        Butaboutus.addMouseListener(this);
+        this.add(Butaboutus);
 
         bgimage = new JLabel(new ImageIcon("IMG/nyancat500-background.jpg"));
         bgimage.setBounds(0, 0, 800, 500);
@@ -124,13 +138,21 @@ public class PanelSnake extends JPanel implements ActionListener, MouseListener{
     @Override
     public void mouseEntered(MouseEvent e) {
         System.out.println("You Entered the mouse");
-        Butplay.setIcon(Play2);
+        if(e.getSource() == Butplay){
+            Butplay.setIcon(Play2);
+        }else if (e.getSource() == Butaboutus){
+            Butaboutus.setIcon(Aboutus2);
+        }
     }
 
     @Override
     public void mouseExited(MouseEvent e) {
         System.out.println("You Exited the mouse");
-        Butplay.setIcon(Play1);
+        if(e.getSource() == Butplay){
+            Butplay.setIcon(Play1);
+        }else if (e.getSource() == Butaboutus){
+            Butaboutus.setIcon(Aboutus1);
+        }
     }
 
 }
