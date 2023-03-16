@@ -1,9 +1,13 @@
+import javax.swing.Icon;
+
 class Pos {
     int row;
     int col;
-    Pos(int x,int y){
+    Icon img;
+    Pos(int x,int y,Icon icon){
         row = x; 
         col = y;
+        img = icon
     }
 
     @Override public String toString(){
