@@ -6,10 +6,10 @@ import java.util.Random;
 public class Snake{
     private JLabel[][] scene;
     private Fruit fruit;
-    private Icon Headup = new ImageIcon("CatUp.png");
-    private Icon Headdown = new ImageIcon("CatDown.png");
-    private Icon Headleft = new ImageIcon("CatLeft.png");
-    private Icon Headright = new ImageIcon("CatRight.png");
+    private Icon Headup = new ImageIcon("IMG/CatUp.png");
+    private Icon Headdown = new ImageIcon("IMG/CatDown.png");
+    private Icon Headleft = new ImageIcon("IMG/CatLeft.png");
+    private Icon Headright = new ImageIcon("IMG/CatRight.png");
     private Icon Body = new ImageIcon("Cat10-4.png");
     protected ArrayList<Pos> snake = new ArrayList<>();
 
