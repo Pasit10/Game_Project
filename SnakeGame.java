@@ -19,9 +19,6 @@ public class SnakeGame extends JFrame{
         this.setLocationRelativeTo(null);
         this.setVisible(true);
     }
-
-    // private void detailBoard(){
-        // }
            
     public static void main(String[] args) {
         new SnakeGame();

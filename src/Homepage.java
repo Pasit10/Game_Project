@@ -12,9 +12,6 @@ public class Homepage extends JPanel implements ActionListener, MouseListener{
     Image CAT2; 
     Image background;
     Image CATGAME;
-    // Image easy;
-    // Image normal;
-    // Image hard;
     ImageIcon Play1;
     ImageIcon Play2;
     ImageIcon Aboutus1;
@@ -42,9 +39,6 @@ public class Homepage extends JPanel implements ActionListener, MouseListener{
         CAT2 = new ImageIcon("IMG/Cat5.png").getImage().getScaledInstance(106, 70, Image.SCALE_DEFAULT);
         //background = new ImageIcon("IMG/nyancat500-background.jpg").getImage();
         CATGAME = new ImageIcon("IMG/CatgameName200.png").getImage();
-        // easy = new ImageIcon("IMG/Easy200.png").getImage();
-        // normal = new ImageIcon("IMG/Normal200.png").getImage();
-        // hard = new ImageIcon("IMG/Hard200.png").getImage();
         Play1 = new ImageIcon(new ImageIcon("IMG/Play6200.png").getImage());
         Play2 = new ImageIcon(new ImageIcon("IMG/Play7.png").getImage().getScaledInstance(267, 200, Image.SCALE_DEFAULT));
         Aboutus1 = new ImageIcon(new ImageIcon("IMG/aboutus1.png").getImage().getScaledInstance(355, 200, Image.SCALE_DEFAULT));
@@ -87,9 +81,6 @@ public class Homepage extends JPanel implements ActionListener, MouseListener{
         g2D.drawImage(CATGAME, 80, 50, null);
         g2D.drawImage(CAT1, x1, y1, null);
         g2D.drawImage(CAT2, x2, y2, null);
-        // g2D.drawImage(easy, 300, 200, null);
-        // g2D.drawImage(normal, 300, 250, null);
-        // g2D.drawImage(hard, 300, 300, null)  ;
        
     }
 

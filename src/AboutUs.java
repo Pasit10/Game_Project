@@ -2,10 +2,10 @@ package src;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
-import src.*;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
-public class AboutUs extends JFrame{
+public class AboutUs extends JFrame implements MouseListener{
     final int WIDTH = 800;
     final int HEIGHT = 500;
     JPanel panels;
@@ -13,8 +13,11 @@ public class AboutUs extends JFrame{
     JLabel bgimage;
     Image Support;
     Image QR;
+    Image Us;
+
     ImageIcon back;
-    JButton Butback;
+    JLabel Laback;
+
 
     public AboutUs(){
         panels = new JPanel();
@@ -43,25 +46,49 @@ public class AboutUs extends JFrame{
         //Support = new ImageIcon("IMG/support.png").getImage().getScaledInstance(355, 200, Image.SCALE_DEFAULT);
         Support = new ImageIcon("IMG/support150.png").getImage();
         QR = new ImageIcon("IMG/Donate300.png").getImage();
+        Us = new ImageIcon("IMG/Us200.png").getImage();
+        //back = new ImageIcon("IMG/Arrow250.png").getImage();
+        back = new ImageIcon(new ImageIcon("IMG/Arrow250.png").getImage());
 
-        back = new ImageIcon(new ImageIcon("IMG/Arrow70.png").getImage());
-        Butback = new JButton("");
-        Butback.setBounds(0, 0, 100, 70);
-        //Butback.setContentAreaFilled(false);
-        //Butback.setBorder(null);
-        //Butback.setBorderPainted(false);
-        Butback.setIcon(back);
-        Butback.addMouseListener(panels);
-        panels.add(Butback);
-
+        Laback = new JLabel(back);    
+        Laback.setBounds(0, 0, 100, 80);
+        panels.add(Laback);
+        panels.setComponentZOrder(Laback, 0);
+        Laback.addMouseListener(this);
 
     }
 
     public void paint(Graphics g){
         Graphics2D g2D = (Graphics2D)g;
         super.paint(g); 
-        g2D.drawImage(Support, 270, 50, null);
-        g2D.drawImage(QR, 250, 180, null);
+        g2D.drawImage(Support, 470, 50, null);
+        g2D.drawImage(QR, 450, 180, null);
+        g2D.drawImage(Us, 60, 200, null);
+    }
+
+    @Override
+    public void mouseClicked(MouseEvent e) {
+        System.out.println("You Clicked the mouse");
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e) {
+        System.out.println("You Pressed the mouse");
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+        System.out.println("You Released the mouse");
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+        // TODO Auto-generated method stub
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
+        // TODO Auto-generated method stub
     }
 
 }
