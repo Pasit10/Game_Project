@@ -11,7 +11,7 @@ public class Snake{
     private Icon Headleft = new ImageIcon("game/IMGFORGAME/CatLeft.png");
     private Icon Headright = new ImageIcon("game/IMGFORGAME/CatRight.png");
     private Icon body = new ImageIcon("game/IMGFORGAME/Rainbow-3 redup.png");
-    private Icon bodyUpanddown = new ImageIcon("game/IMGFORGAME/Rainbow-3 UP.png");
+    private Icon bodyUpanddown = new ImageIcon("game/IMGFORGAME/Rainbow-3 reddown UP.png");
     private Icon BodyredUp = new ImageIcon("game/IMGFORGAME/Rainbow-3 redup.png");
     //private Icon BodyredDown = new ImageIcon("game/IMGFORGAME/Rainbow-3 reddown.png");
     private Icon Bodyupleft = new ImageIcon("game/IMGFORGAME/Rian-turn-1-1.png");
