@@ -6,14 +6,14 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 public class AboutUs extends JFrame implements MouseListener{
-    final int WIDTH = 800;
-    final int HEIGHT = 500;
-    JPanel panels;
-    Image background;
-    JLabel bgimage;
-    Image Support;
-    Image QR;
-    Image Us;
+    private final int WIDTH = 800;
+    private final int HEIGHT = 500;
+    private JPanel panels;
+    private Image background;
+    private JLabel bgimage;
+    private Image Support;
+    private Image QR;
+    private Image Us;
 
     ImageIcon back;
     JLabel Laback;
