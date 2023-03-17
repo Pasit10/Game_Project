@@ -18,6 +18,7 @@ public class gameframe extends JFrame{
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new FlowLayout());
         setSize(1920, 1080);
+        //setSize(1000, 1000);
         setVisible(true);
         PageCommonent();
         add(new Game());

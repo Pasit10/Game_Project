@@ -24,7 +24,7 @@ public class Game extends JPanel implements ActionListener{
     public Game(){
         setSize(1920,1000);
         SnakePart = new JLabel();
-        SnakePart.setPreferredSize(new Dimension(1000, 500));
+        SnakePart.setPreferredSize(new Dimension(1520, 690));
         SnakePart.setLayout(new GridLayout(x,y));
         addKeyListener(new KeyboardGame());
         GameComponent();
