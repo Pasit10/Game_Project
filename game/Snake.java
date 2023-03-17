@@ -12,14 +12,13 @@ public class Snake{
     private Icon Headdown = new ImageIcon("game/IMGFORGAME/CatDown.png");
     private Icon Headleft = new ImageIcon("game/IMGFORGAME/CatLeft.png");
     private Icon Headright = new ImageIcon("game/IMGFORGAME/CatRight.png");
-    private Icon body = new ImageIcon("game/IMGFORGAME/Rainbow-3 redup.png");
-    private Icon bodyUpanddown = new ImageIcon("game/IMGFORGAME/Rainbow-3 reddown UP.png");
-    private Icon BodyredUp = new ImageIcon("game/IMGFORGAME/Rainbow-3 redup.png");
-    //private Icon BodyredDown = new ImageIcon("game/IMGFORGAME/Rainbow-3 reddown.png");
-    private Icon Bodyupleft = new ImageIcon("game/IMGFORGAME/Rian-turn-1-1.png");
-    private Icon Bodyupright = new ImageIcon("game/IMGFORGAME/Rian-turn-1-2.png");
-    private Icon Bodydownleft = new ImageIcon("game/IMGFORGAME/Rian-turn-1-3.png");
-    private Icon Bodydownright = new ImageIcon("game/IMGFORGAME/Rian-turn-1-4.png");
+    private Icon body = new ImageIcon("game/IMGFORGAME/body.png");
+    private Icon BodyY = new ImageIcon("game/IMGFORGAME/body.png");
+    private Icon bodyUpanddown = new ImageIcon("game/IMGFORGAME/body_up.png");
+    private Icon Bodyupleft = new ImageIcon("game/IMGFORGAME/body_up_left.png");
+    private Icon Bodyupright = new ImageIcon("game/IMGFORGAME/body_up_right.png");
+    private Icon Bodydownleft = new ImageIcon("game/IMGFORGAME/body_down_left.png");
+    private Icon Bodydownright = new ImageIcon("game/IMGFORGAME/body_down_right.png");
     protected ArrayList<Pos> snake = new ArrayList<>();
     private char Oldcommad;
 
@@ -84,7 +83,7 @@ public class Snake{
             if(command == 'w' || command == 's')
                 body = bodyUpanddown;
             else
-                body = BodyredUp;
+                body = BodyY;
         }
         if(snake.size() > 1){
             snake.get(1).img = body;
