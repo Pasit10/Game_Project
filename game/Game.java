@@ -6,7 +6,7 @@ import java.util.Random;
 import javax.swing.*;
 
 public class Game extends JPanel implements ActionListener{
-    private int speed = 120;
+    private int speed = 140;
     private int x = 30;
     private int y = 60;
     private JLabel[][] snakescenes = new JLabel[x][y];
@@ -15,7 +15,7 @@ public class Game extends JPanel implements ActionListener{
     private Snake snake;
     private Random rn = new Random();
     private int state = 0;
-    private int maxstate = rn.nextInt(60);
+    private int maxstate = rn.nextInt(40);
     private int changeTimer = 0;
     private int addGoldenfish = 3;
 
