@@ -46,17 +46,14 @@ public class Game extends JPanel implements ActionListener{
             state = 0;
             maxstate = rn.nextInt(60);
             fruit.setPosApple();
-            System.out.println(maxstate);
         }
         if(changeTimer >= 100 && speed > 50){
             changeTimer = 0;
             speed -= 2;
-            System.out.println(speed + " speed ");
             t.setDelay(speed);
         }
         state++;
         changeTimer++;
-        System.out.println(changeTimer + "dd");
         snake.move(command);
     }
 
