@@ -1,3 +1,5 @@
+package src;
+
 //package SnakeGame;
 
 import javax.swing.*;
@@ -11,7 +13,7 @@ public class SnakeGame extends JFrame{
 
     
     public SnakeGame() {
-        Home = new Homepage();
+        Home = new Homepage(null);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setSize(800, 500);
         this.add(Home);   
