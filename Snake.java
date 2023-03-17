@@ -2,6 +2,7 @@ import java.awt.*;
 import javax.swing.*;
 import java.util.ArrayList;
 import java.util.Random;
+import game.*;
 
 public class Snake{
     private JLabel[][] scene;

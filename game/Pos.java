@@ -1,15 +1,17 @@
+package game;
+
 import javax.swing.Icon;
 
-class Pos {
+public class Pos {
     int row;
     int col;
     Icon img;
-    Pos(int x,int y){
+    protected Pos(int x,int y){
         row = x;
         col = y;
     }
 
-    Pos(int x,int y,Icon icon){
+    protected Pos(int x,int y,Icon icon){
         row = x; 
         col = y;
         img = icon;
