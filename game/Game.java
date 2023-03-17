@@ -6,11 +6,9 @@ import java.util.Random;
 import javax.swing.*;
 
 public class Game extends JPanel implements ActionListener{
-    private JLabel SnakePart;
-    private JLabel BackGroundPart;
     private int speed = 120;
-    private int x = 40;
-    private int y = 80;
+    private int x = 30;
+    private int y = 60;
     private JLabel[][] snakescenes = new JLabel[x][y];
     private char command;
     private Fruit fruit;
@@ -23,9 +21,7 @@ public class Game extends JPanel implements ActionListener{
     Timer t = new Timer(speed, this);
     public Game(){
         setSize(1920,1000);
-        SnakePart = new JLabel();
-        SnakePart.setPreferredSize(new Dimension(1520, 690));
-        SnakePart.setLayout(new GridLayout(x,y));
+        setLayout(new GridLayout(x,y));
         addKeyListener(new KeyboardGame());
         GameComponent();
         fruit = new Fruit(snakescenes);
@@ -33,7 +29,6 @@ public class Game extends JPanel implements ActionListener{
         setFocusable(true);
         setBackground(Color.BLACK);
         fruit.setPosApple();
-        add(SnakePart);
     }
 
     private void GameComponent(){
@@ -41,7 +36,7 @@ public class Game extends JPanel implements ActionListener{
             for(int j = 0;j < snakescenes[i].length;j++){
                 snakescenes[i][j] = new JLabel();
                 snakescenes[i][j].setPreferredSize(new Dimension(20, 20));
-                SnakePart.add(snakescenes[i][j]);
+                add(snakescenes[i][j]);
             }
         }
     }
