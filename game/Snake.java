@@ -79,7 +79,8 @@ public class Snake{
             System.exit(1);
         }
         checkHitBody(); 
-        if(fruit.CheckHitSnake(snake.get(0).row,snake.get(0).col)) addTail();
+        fruit.CheckHitSnake(snake.get(0).row,snake.get(0).col);
+        checkHitRock();
         if(Oldcommad == command){
             if(command == 'w' || command == 's')
                 body = bodyUpanddown;
@@ -126,6 +127,12 @@ public class Snake{
             if(snake.get(i).row == snake.get(0).row && snake.get(i).col == snake.get(0).col){
                 System.exit(1);
             }
+        }
+    }
+
+    private void checkHitRock(){
+        if(Rock.AllRock.contains(new Pos(snake.get(0).row,snake.get(0).col))){
+            System.exit(1);
         }
     }
 }

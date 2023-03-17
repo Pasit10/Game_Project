@@ -21,4 +21,8 @@ public class gameframe extends JFrame{
         setVisible(true);
         add(new Game());
     }
+
+    protected void setVisMain(){
+        home.setVisible(true);
+    }
 }

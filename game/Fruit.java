@@ -23,6 +23,9 @@ public class Fruit {
     protected void setPosCommonFish(){
         if(AllFruit.size() < 10){
             int x = rn.nextInt(p.length) ,y = rn.nextInt(p[0].length);
+            if(Rock.AllRock.contains(new Pos(x,y))){
+                setPosCommonFish();
+            }
             AllFruit.add(new Pos(x, y,"commonfish"));
             p[x][y].setIcon(commonfish);
         }
@@ -32,6 +35,9 @@ public class Fruit {
     protected void setPosGoldenFish(){
         if(AllFruit.size() < 10){
             int x = rn.nextInt(p.length) ,y = rn.nextInt(p[0].length);
+            if(Rock.AllRock.contains(new Pos(x,y))){
+                setPosCommonFish();
+            }
             AllFruit.add(new Pos(x, y,"goldenfish"));
             p[x][y].setIcon(goldenfish);
         }

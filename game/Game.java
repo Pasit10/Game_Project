@@ -29,6 +29,7 @@ public class Game extends JPanel implements ActionListener{
         snake = new Snake(fruit,snakescenes);
         setFocusable(true);
         setBackground(Color.BLACK);
+        new Rock(snakescenes);
         fruit.setPosCommonFish();
         fruit.setPosGoldenFish();
     }
