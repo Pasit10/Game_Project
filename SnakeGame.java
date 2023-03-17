@@ -1,4 +1,4 @@
-//package SnakeGame;
+    //package SnakeGame;
 
 import javax.swing.*;
 import java.awt.*;
