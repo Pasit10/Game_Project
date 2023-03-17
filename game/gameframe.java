@@ -15,7 +15,7 @@ public class gameframe extends JFrame{
     public gameframe(SnakeGame h){
         home = h;
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        //setLayout(new FlowLayout());
+        setLayout(new FlowLayout());
         setBounds(0, 0, 100, 100);
         setSize(1920, 1080);
         setVisible(true);
