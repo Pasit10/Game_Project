@@ -13,7 +13,7 @@ public class SnakeGame extends JFrame{
 
     
     public SnakeGame() {
-        Home = new Homepage(null);
+        Home = new Homepage(this);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setSize(800, 500);
         this.add(Home);   
