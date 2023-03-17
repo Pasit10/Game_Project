@@ -5,6 +5,7 @@ import javax.swing.*;
 public class Fruit {
     private JLabel[][] p;
     private ArrayList<Pos> AllFruit = new ArrayList<>();
+    private Icon Apple = new ImageIcon("IMG/Fish20.png");
     private Random rn = new Random();
     protected Fruit(JLabel[][] p){
         this.p = p;
