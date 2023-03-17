@@ -5,6 +5,7 @@ import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
+
 public class AboutUs extends JFrame implements MouseListener{
     private final int WIDTH = 800;
     private final int HEIGHT = 500;
@@ -15,11 +16,15 @@ public class AboutUs extends JFrame implements MouseListener{
     private Image QR;
     private Image Us;
 
+    private SnakeGame home;
+
     ImageIcon back;
     JLabel Laback;
 
 
-    public AboutUs(){
+    public AboutUs(SnakeGame h){
+        home = h;
+
         panels = new JPanel();
         detailPanel();
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -73,7 +78,9 @@ public class AboutUs extends JFrame implements MouseListener{
 
     @Override
     public void mousePressed(MouseEvent e) {
-        System.out.println("You Pressed the mouse");
+        //System.out.println("You Pressed the mouse");
+        home.setVisible(true);
+        this.setVisible(false);
     }
 
     @Override

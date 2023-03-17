@@ -35,7 +35,11 @@ public class Homepage extends JPanel implements ActionListener, MouseListener{
     private JButton Butaboutus;
     private JLabel bgimage;
 
-    public Homepage(){
+    private SnakeGame home;
+
+    public Homepage(SnakeGame h){
+        home = h;
+
         this.setLayout(null);
         this.setPreferredSize(new Dimension(Panel_WIDTH,Panel_HEIGHT));
         this.setBackground(Color.BLACK);
@@ -49,7 +53,7 @@ public class Homepage extends JPanel implements ActionListener, MouseListener{
         Play2 = new ImageIcon(new ImageIcon("IMG/Play7.png").getImage().getScaledInstance(267, 200, Image.SCALE_DEFAULT));
         Aboutus1 = new ImageIcon(new ImageIcon("IMG/aboutus1.png").getImage().getScaledInstance(355, 200, Image.SCALE_DEFAULT));
         Aboutus2 = new ImageIcon(new ImageIcon("IMG/aboutus2.png").getImage().getScaledInstance(355, 200, Image.SCALE_DEFAULT));
-        timer = new Timer(1, this);
+        timer = new Timer(10, this);
         timer.start();
             
         Butplay = new JButton("");
@@ -128,24 +132,22 @@ public class Homepage extends JPanel implements ActionListener, MouseListener{
 
     @Override
     public void mouseClicked(MouseEvent e) {
-        System.out.println("You Clicked the mouse");
     }
 
     @Override
     public void mousePressed(MouseEvent e) {
-        System.out.println("You Pressed the mouse");
     }
 
     @Override
     public void mouseReleased(MouseEvent e) {
         if(e.getSource() == Butaboutus){
-            new AboutUs();
+            new AboutUs(home);
+            home.setVisible(false);
         }
     }
 
     @Override
     public void mouseEntered(MouseEvent e) {
-        System.out.println("You Entered the mouse");
         if(e.getSource() == Butplay){
             Butplay.setIcon(Play2);
         }else if (e.getSource() == Butaboutus){
@@ -155,7 +157,6 @@ public class Homepage extends JPanel implements ActionListener, MouseListener{
 
     @Override
     public void mouseExited(MouseEvent e) {
-        System.out.println("You Exited the mouse");
         if(e.getSource() == Butplay){
             Butplay.setIcon(Play1);
         }else if (e.getSource() == Butaboutus){
