@@ -2,7 +2,7 @@ package src;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-
+import game.*;
 
 public class Homepage extends JPanel implements ActionListener, MouseListener{
     
@@ -142,6 +142,9 @@ public class Homepage extends JPanel implements ActionListener, MouseListener{
     public void mouseReleased(MouseEvent e) {
         if(e.getSource() == Butaboutus){
             new AboutUs(home);
+            home.setVisible(false);
+        }else if(e.getSource() == Butplay){
+            new gameframe(home);
             home.setVisible(false);
         }
     }

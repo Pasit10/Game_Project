@@ -7,8 +7,8 @@ import javax.swing.*;
 
 public class Game extends JPanel implements ActionListener{
     private int speed = 120;
-    private int x = 40;
-    private int y = 80;
+    private int x = 50;
+    private int y = 96;
     private JLabel[][] snakescenes = new JLabel[x][y];
     private char command;
     private Fruit fruit;
@@ -20,7 +20,7 @@ public class Game extends JPanel implements ActionListener{
 
     Timer t = new Timer(speed, this);
     public Game(){
-        setSize(800,500);
+        setSize(1920,1000);
         setLayout(new GridLayout(x,y));
         addKeyListener(new KeyboardGame());
         GameComponent();
@@ -35,7 +35,7 @@ public class Game extends JPanel implements ActionListener{
         for(int i = 0;i < snakescenes.length;i++){
             for(int j = 0;j < snakescenes[i].length;j++){
                 snakescenes[i][j] = new JLabel();
-                snakescenes[i][j].setPreferredSize(new Dimension(30, 30));
+                snakescenes[i][j].setPreferredSize(new Dimension(20, 20));
                 add(snakescenes[i][j]);
             }
         }
@@ -71,13 +71,5 @@ public class Game extends JPanel implements ActionListener{
             }
             t.start();
         }
-    }
-
-    public static void main(String[] args) {
-        JFrame x = new JFrame();
-        x.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        x.setSize(1920,1080);
-        x.add(new Game());
-        x.setVisible(true);
     }
 }
