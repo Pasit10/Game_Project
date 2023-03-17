@@ -7,27 +7,46 @@ import javax.swing.*;
 public class Fruit {
     private JLabel[][] p;
     private ArrayList<Pos> AllFruit = new ArrayList<>();
-    private Icon Apple = new ImageIcon("IMG/Fish20.png");
+    private Icon commonfish = new ImageIcon("IMG/Fish20.png");
+    private Icon goldenfish = new ImageIcon("game/IMGFORGAME/FishGold.png");
     private Random rn = new Random();
     protected Fruit(JLabel[][] p){
         this.p = p;
     }
 
-    protected void setPosApple(){
+    private Snake snake;
+
+    protected void setSnake(Snake sn){
+        snake = sn;
+    }
+
+    protected void setPosCommonFish(){
         if(AllFruit.size() < 10){
             int x = rn.nextInt(p.length) ,y = rn.nextInt(p[0].length);
-            AllFruit.add(new Pos(x, y));
-            p[x][y].setIcon(Apple);;
+            AllFruit.add(new Pos(x, y,"commonfish"));
+            p[x][y].setIcon(commonfish);
         }
         System.out.println(AllFruit);
+    }
+
+    protected void setPosGoldenFish(){
+        if(AllFruit.size() < 10){
+            int x = rn.nextInt(p.length) ,y = rn.nextInt(p[0].length);
+            AllFruit.add(new Pos(x, y,"goldenfish"));
+            p[x][y].setIcon(goldenfish);
+        }
     }
 
     protected boolean CheckHitSnake(int x,int y){
         for(int i = 0;i < AllFruit.size();i++){
             if(AllFruit.get(i).row == x && AllFruit.get(i).col == y){
+                if(AllFruit.get(i).name.equals("commonfish")){
+                    snake.addTail();
+                }else if(AllFruit.get(i).name.equals("goldenfish")){
+                    snake.addTail();
+                    snake.addTail();
+                }
                 AllFruit.remove(i);
-                System.out.println(AllFruit);
-                return true;
             }
         }
         return false;

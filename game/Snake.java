@@ -30,9 +30,10 @@ public class Snake{
         int y = rn.nextInt(scene[0].length);
         snake.add(new Pos(x, y,Headright));
         scene[x][y].setIcon(Headright);
+        fruit.setSnake(this);
     }
 
-    private void addTail(){
+    protected void addTail(){
         snake.add(new Pos(snake.get(snake.size() - 1).row, snake.get(snake.size() - 1).col));
         System.out.println(snake.size());
     }

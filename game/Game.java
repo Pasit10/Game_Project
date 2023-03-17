@@ -17,6 +17,7 @@ public class Game extends JPanel implements ActionListener{
     private int state = 0;
     private int maxstate = rn.nextInt(60);
     private int changeTimer = 0;
+    private int addGoldenfish = 3;
 
     Timer t = new Timer(speed, this);
     public Game(){
@@ -28,7 +29,8 @@ public class Game extends JPanel implements ActionListener{
         snake = new Snake(fruit,snakescenes);
         setFocusable(true);
         setBackground(Color.BLACK);
-        fruit.setPosApple();
+        fruit.setPosCommonFish();
+        fruit.setPosGoldenFish();
     }
 
     private void GameComponent(){
@@ -45,7 +47,12 @@ public class Game extends JPanel implements ActionListener{
         if(state >= maxstate){
             state = 0;
             maxstate = rn.nextInt(60);
-            fruit.setPosApple();
+            fruit.setPosCommonFish();
+            addGoldenfish--;
+        }
+        if(addGoldenfish <= 0){
+            fruit.setPosGoldenFish();
+            addGoldenfish = 3;
         }
         if(changeTimer >= 100 && speed > 50){
             changeTimer = 0;
