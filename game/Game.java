@@ -21,8 +21,8 @@ public class Game extends JPanel implements ActionListener{
 
     Timer t = new Timer(speed, this);
     public Game(){
-        setSize(1920,1000);
         setLayout(new GridLayout(x,y));
+        //setLayout(null);
         addKeyListener(new KeyboardGame());
         GameComponent();
         fruit = new Fruit(snakescenes);

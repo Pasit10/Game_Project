@@ -10,7 +10,7 @@ public class AboutUs extends JFrame implements MouseListener{
     private final int WIDTH = 800;
     private final int HEIGHT = 500;
     private JPanel panels;
-    private Image background;
+    //private Image background;
     private JLabel bgimage;
     private Image Support;
     private Image QR;

@@ -3,14 +3,12 @@ package src;
 //package SnakeGame;
 
 import javax.swing.*;
-import java.awt.*;
-import src.*;
 
 public class SnakeGame extends JFrame{
 
     Game game;
     Homepage Home;
-
+    playmusic Sound = new playmusic();
     
     public SnakeGame() {
         Home = new Homepage(this);
@@ -20,6 +18,7 @@ public class SnakeGame extends JFrame{
         this.pack();
         this.setLocationRelativeTo(null);
         this.setVisible(true);
+        Sound.Playmusic("Sound/Nyan-Cat.wav");
     }
            
     public static void main(String[] args) {

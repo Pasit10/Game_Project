@@ -11,7 +11,7 @@ public class Homepage extends JPanel implements ActionListener, MouseListener{
     private Image CAT1; 
     private Image CAT2; 
     private Image CAT3;
-    private Image background;
+    //private Image background;
     private Image CATGAME;
     private ImageIcon Play1;
     private ImageIcon Play2;
