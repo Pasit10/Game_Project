@@ -135,4 +135,8 @@ public class Snake{
             System.exit(1);
         }
     }
+
+    protected int getSnakelength(){
+        return snake.size() - 1;
+    }
 }
