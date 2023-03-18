@@ -52,7 +52,4 @@ public class Pos {
             return false;
         return true;
     }
-
-        
-    
 }

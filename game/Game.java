@@ -19,11 +19,13 @@ public class Game extends JPanel implements ActionListener{
     private int changeTimer = 0;
     private int addGoldenfish = 3;
 
+    private JLabel score;
+
     Timer t = new Timer(speed, this);
-    public Game(){
+    public Game(JLabel score){
         setSize(1980,1080);
+        this.score = score;
         setLayout(new GridLayout(x,y));
-        //setLayout(null);
         addKeyListener(new KeyboardGame());
         GameComponent();
         fruit = new Fruit(snakescenes);
@@ -33,6 +35,7 @@ public class Game extends JPanel implements ActionListener{
         new Rock(snakescenes);
         fruit.setPosCommonFish();
         fruit.setPosGoldenFish();
+        t.start();
     }
 
     private void GameComponent(){
@@ -64,6 +67,7 @@ public class Game extends JPanel implements ActionListener{
         state++;
         changeTimer++;
         snake.move(command);
+        score.setText("Score : " + snake.getSnakelength());
     }
 
     private class KeyboardGame extends KeyAdapter{
@@ -78,7 +82,6 @@ public class Game extends JPanel implements ActionListener{
             }else if((keyPress == KeyEvent.VK_D || keyPress == KeyEvent.VK_RIGHT ) && command != 'a'){
                 command = 'd';
             }
-            t.start();
         }
     }
 }
