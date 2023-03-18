@@ -35,9 +35,9 @@ public class Homepage extends JPanel implements ActionListener, MouseListener{
     private JButton Butaboutus;
     private JLabel bgimage;
 
-    private SnakeGame home;
+    private CatGame home;
 
-    public Homepage(SnakeGame h){
+    public Homepage(CatGame h){
         home = h;
 
         this.setLayout(null);

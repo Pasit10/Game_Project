@@ -11,8 +11,8 @@ public class Game extends JPanel implements ActionListener{
     private int y = 60;
     private JLabel[][] snakescenes = new JLabel[x][y];
     private char command;
-    private Fruit fruit;
-    private Snake snake;
+    private Foods fruit;
+    private CAT snake;
     private Random rn = new Random();
     private int state = 0;
     private int maxstate = rn.nextInt(40);
@@ -28,8 +28,8 @@ public class Game extends JPanel implements ActionListener{
         setLayout(new GridLayout(x,y));
         addKeyListener(new KeyboardGame());
         GameComponent();
-        fruit = new Fruit(snakescenes);
-        snake = new Snake(fruit,snakescenes);
+        fruit = new Foods(snakescenes);
+        snake = new CAT(fruit,snakescenes);
         setFocusable(true);
         setBackground(Color.BLACK);
         new Rock(snakescenes);

@@ -4,19 +4,19 @@ import java.util.Random;
 import java.util.ArrayList;
 import javax.swing.*;
 
-public class Fruit {
+public class Foods {
     private JLabel[][] p;
     private ArrayList<Pos> AllFruit = new ArrayList<>();
     private Icon commonfish = new ImageIcon("IMG/Fish20.png");
     private Icon goldenfish = new ImageIcon("game/IMGFORGAME/FishGold.png");
     private Random rn = new Random();
-    protected Fruit(JLabel[][] p){
+    protected Foods(JLabel[][] p){
         this.p = p;
     }
 
-    private Snake snake;
+    private CAT snake;
 
-    protected void setSnake(Snake sn){
+    protected void setSnake(CAT sn){
         snake = sn;
     }
 

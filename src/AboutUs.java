@@ -16,13 +16,13 @@ public class AboutUs extends JFrame implements MouseListener{
     private Image QR;
     private Image Us;
 
-    private SnakeGame home;
+    private CatGame home;
 
     ImageIcon back;
     JLabel Laback;
 
 
-    public AboutUs(SnakeGame h){
+    public AboutUs(CatGame h){
         home = h;
 
         panels = new JPanel();

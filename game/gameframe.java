@@ -2,14 +2,14 @@ package game;
 import java.awt.*;
 import javax.swing.*;
 
-import src.SnakeGame;
+import src.CatGame;
 
 public class gameframe extends JFrame{
     private JLabel score;
-    private SnakeGame home;
+    private CatGame home;
     private Game g;
 
-    public gameframe(SnakeGame h){
+    public gameframe(CatGame h){
         home = h;
         score = new JLabel("Score : ");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

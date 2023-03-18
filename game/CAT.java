@@ -5,9 +5,9 @@ import javax.swing.*;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class Snake{
+public class CAT{
     private JLabel[][] scene;
-    private Fruit fruit;
+    private Foods fruit;
     private Icon Headup = new ImageIcon("game/IMGFORGAME/CatUp.png");
     private Icon Headdown = new ImageIcon("game/IMGFORGAME/CatDown.png");
     private Icon Headleft = new ImageIcon("game/IMGFORGAME/CatLeft.png");
@@ -22,7 +22,7 @@ public class Snake{
     protected ArrayList<Pos> snake = new ArrayList<>();
     private char Oldcommad;
 
-    protected Snake(Fruit f,JLabel[][] s){
+    protected CAT(Foods f,JLabel[][] s){
         fruit = f;
         scene = s;
         Random rn = new Random();
