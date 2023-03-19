@@ -40,6 +40,7 @@ public class AddnametoScoreBoard extends JFrame implements MouseListener{
     public AddnametoScoreBoard(int score,CatGame ct){
         catgame = ct;
         this.score = score;
+        setResizable(false);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         AddnametoScoreBoradComponents();
         

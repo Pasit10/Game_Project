@@ -12,12 +12,13 @@ public class CatGame extends JFrame{
     
     public CatGame() {
         Home = new Homepage(this);
-        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-        this.setSize(800, 500);
-        this.add(Home);   
-        this.pack();
-        this.setLocationRelativeTo(null);
-        this.setVisible(true);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setSize(800, 500);
+        add(Home);   
+        pack();
+        setLocationRelativeTo(null);
+        setVisible(true);
+        setResizable(false);
         Sound.Playmusic("Sound/Nyan-Cat.wav");
     }
            

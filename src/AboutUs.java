@@ -27,6 +27,7 @@ public class AboutUs extends JFrame implements MouseListener{
 
         panels = new JPanel();
         detailPanel();
+        setResizable(false);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setSize(WIDTH, HEIGHT);
         this.add(panels);   
