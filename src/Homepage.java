@@ -2,6 +2,8 @@ package src;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+
+import ScoreBoard.ScoreBoard;
 import game.*;
 
 public class Homepage extends JPanel implements ActionListener, MouseListener{
@@ -160,7 +162,8 @@ public class Homepage extends JPanel implements ActionListener, MouseListener{
             new gameframe(home);
             home.setVisible(false);
         }else if(e.getSource() == Butscoreboard){
-            //input
+            new ScoreBoard(home);
+            home.setVisible(false);
         }
     }
 

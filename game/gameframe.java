@@ -16,15 +16,15 @@ public class gameframe extends JFrame{
         score = new JLabel("Score : ");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(null);
-        //setLayout(new FlowLayout());
         setSize(WIDTH, HEIGHT);
         setResizable(false);
-        setVisible(true);
+        setLocationRelativeTo(null);
         g = new Game(score,this);
         g.setBounds(0, 30, 1200, 700);
         score.setBounds(550, 10, 100, 10);
         add(g);
         add(score);
+        setVisible(true);
     }
 
     protected void setVisMain(){

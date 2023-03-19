@@ -22,6 +22,7 @@ public class ScoreBoard extends JFrame implements MouseListener{
         setSize(800,500);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(null);
+        setLocationRelativeTo(null);
         JLabel bgimage = new JLabel(new ImageIcon("IMG/nyancat500-background.jpg"));
         bgimage.setBounds(0, 0, 800, 500);
         scoreBoardcomponent();  
@@ -98,8 +99,8 @@ public class ScoreBoard extends JFrame implements MouseListener{
     @Override
     public void mouseReleased(MouseEvent e) {
         if(e.getSource() == btnback){
-            setVisible(false);
             game.setVisible(true);
+            setVisible(false);
         }
     }
 
@@ -127,9 +128,5 @@ public class ScoreBoard extends JFrame implements MouseListener{
             name = n;
             score = s;
         }
-    }
-
-    public static void main(String[] args) {
-        new ScoreBoard(null);
     }
 }
