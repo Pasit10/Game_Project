@@ -99,7 +99,7 @@ public class Homepage extends JPanel implements ActionListener, MouseListener{
         Graphics2D g2D = (Graphics2D)g;
         super.paint(g); //setBackground
         //g2D.drawImage(background, 0, 0, null);
-        g2D.drawImage(CATGAME, 80, 0, null);
+        g2D.drawImage(CATGAME, 80, 20, null);
         g2D.drawImage(CAT1, x1, y1, null);
         g2D.drawImage(CAT2, x2, y2, null);
         g2D.drawImage(CAT3, x3, y3, null);
