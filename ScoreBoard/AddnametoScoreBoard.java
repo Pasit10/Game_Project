@@ -11,13 +11,17 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
+import src.CatGame;
+
 public class AddnametoScoreBoard extends JFrame implements ActionListener{
     private JLabel gameOver;
     private JButton next;
     private JLabel yourscore;
     private JTextField addName;
     private int score;
-    public AddnametoScoreBoard(int score){
+    private CatGame catgame;
+    public AddnametoScoreBoard(int score,CatGame ct){
+        catgame = ct;
         this.score = score;
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(800,500);
@@ -31,13 +35,13 @@ public class AddnametoScoreBoard extends JFrame implements ActionListener{
         gameOver.setBounds(375, 5, 200, 100);
         add(gameOver);
         yourscore = new JLabel("Your Score : " + score);
-        yourscore.setBounds(300, 35, 200, 100);
+        yourscore.setBounds(350, 35, 100, 100);
         add(yourscore);
         addName = new JTextField("Input Your Name");
         addName.setBounds(275, 200 ,250, 40);
         add(addName);
         next = new JButton("next");
-        next.setBounds(350, 400, 150,50);
+        next.setBounds(325, 300, 150,50);
         add(next);
         next.addActionListener(this);
     }
@@ -46,16 +50,14 @@ public class AddnametoScoreBoard extends JFrame implements ActionListener{
         if(ev.getSource() == next){
             addDatatocsv();
             setVisible(false);
+            catgame.setVisible(true);
         }
     }
 
     private void addDatatocsv(){
         try{
             FileWriter csvWriter = new FileWriter("ScoreBoard/score.csv",true);
-            csvWriter.append(addName.getText());
-            csvWriter.append(",");
-            csvWriter.append("" + score);
-            csvWriter.append("\n");
+            csvWriter.append(addName.getText() + "," + score + "\n");
 
             csvWriter.flush();
             csvWriter.close();

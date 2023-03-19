@@ -76,8 +76,9 @@ public class Game extends JPanel implements ActionListener{
         score.setText("Score : " + snake.getSnakelength());
         if(!isPlaying){
             t.stop();
-            new AddnametoScoreBoard(snake.getSnakelength());
+            new AddnametoScoreBoard(snake.getSnakelength(),gf.home);
             gf.setVisible(false);
+            Rock.AllRock.clear();
         }
     }
 

@@ -6,10 +6,10 @@ import src.CatGame;
 
 public class gameframe extends JFrame{
     private JLabel score;
-    private CatGame home;
     private static final int WIDTH = 1200;
     private static final int HEIGHT = 750;
     private Game g;
+    CatGame home;
 
     public gameframe(CatGame h){
         home = h;

@@ -22,6 +22,7 @@ public class Rock {
             int x = rn.nextInt(scenes.length);
             int y = rn.nextInt(scenes[1].length);
             if(AllRock.contains(new Pos(x, y))){
+                System.out.println("jj");
                 i --;
                 continue;
             }

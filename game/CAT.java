@@ -80,6 +80,7 @@ public class CAT{
             scene[(snake.get(0).row)][snake.get(0).col].setIcon(snake.get(0).img);;
         }catch(ArrayIndexOutOfBoundsException ArrOutOfbound){
             game.setIsplay();
+            System.out.println("hit ขอบ");
         }
         checkHitBody(); 
         fruit.CheckHitSnake(snake.get(0).row,snake.get(0).col);
@@ -129,6 +130,7 @@ public class CAT{
         for(int i = 1;i < snake.size();i++){
             if(snake.get(i).row == snake.get(0).row && snake.get(i).col == snake.get(0).col){
                 game.setIsplay();
+                System.out.println("hit body");
             }
         }
     }
@@ -136,6 +138,7 @@ public class CAT{
     private void checkHitRock(){
         if(Rock.AllRock.contains(new Pos(snake.get(0).row,snake.get(0).col))){
             game.setIsplay();
+            System.out.println("hit rock");
         }
     }
 
