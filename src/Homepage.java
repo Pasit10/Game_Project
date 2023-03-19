@@ -17,6 +17,8 @@ public class Homepage extends JPanel implements ActionListener, MouseListener{
     private ImageIcon Play2;
     private ImageIcon Aboutus1;
     private ImageIcon Aboutus2;
+    private ImageIcon Scoreboard1;
+    private ImageIcon Scoreboard2;
     private Timer timer;
     private int xVelocity1 = 1;
     private int yVelocity1 = 2;
@@ -33,6 +35,7 @@ public class Homepage extends JPanel implements ActionListener, MouseListener{
     // JLabel play;
     private JButton Butplay;
     private JButton Butaboutus;
+    private JButton Butscoreboard;
     private JLabel bgimage;
 
     private CatGame home;
@@ -53,6 +56,8 @@ public class Homepage extends JPanel implements ActionListener, MouseListener{
         Play2 = new ImageIcon(new ImageIcon("IMG/Play9.png").getImage().getScaledInstance(267, 150, Image.SCALE_DEFAULT));
         Aboutus1 = new ImageIcon(new ImageIcon("IMG/aboutus1.png").getImage().getScaledInstance(355, 200, Image.SCALE_DEFAULT));
         Aboutus2 = new ImageIcon(new ImageIcon("IMG/aboutus2.png").getImage().getScaledInstance(355, 200, Image.SCALE_DEFAULT));
+        Scoreboard1 = new ImageIcon(new ImageIcon("IMG/scoreboard1.png").getImage().getScaledInstance(466, 70, Image.SCALE_DEFAULT));
+        Scoreboard2 = new ImageIcon(new ImageIcon("IMG/scoreboard2.png").getImage().getScaledInstance(466, 70, Image.SCALE_DEFAULT));
         timer = new Timer(10, this);
         timer.start();
             
@@ -61,7 +66,7 @@ public class Homepage extends JPanel implements ActionListener, MouseListener{
         Butplay.setContentAreaFilled(false); //not show layout behind the button
         Butplay.setBorderPainted(false); //ปิดขอบ
         Butplay.setIcon(Play1);
-        Butplay.setBounds(275, 235, 260, 120);
+        Butplay.setBounds(275, 200, 260, 120);
         Butplay.addMouseListener(this);
         this.add(Butplay);
 
@@ -70,9 +75,17 @@ public class Homepage extends JPanel implements ActionListener, MouseListener{
         Butaboutus.setContentAreaFilled(false); //not show layout behind the button
         Butaboutus.setBorderPainted(false); //ปิดขอบ
         Butaboutus.setIcon(Aboutus1);
-        Butaboutus.setBounds(235, 320, 350, 120);
+        Butaboutus.setBounds(235, 290, 350, 120);
         Butaboutus.addMouseListener(this);
         this.add(Butaboutus);
+
+        Butscoreboard = new JButton("");
+        Butscoreboard.setContentAreaFilled(false); //not show layout behind the button
+        Butscoreboard.setBorderPainted(false); //ปิดขอบ
+        Butscoreboard.setIcon(Scoreboard1);
+        Butscoreboard.setBounds(160, 400, 500, 60);
+        Butscoreboard.addMouseListener(this);
+        this.add(Butscoreboard);
 
         bgimage = new JLabel(new ImageIcon("IMG/nyancat500-background.jpg"));
         bgimage.setBounds(0, 0, 800, 500);
@@ -86,7 +99,7 @@ public class Homepage extends JPanel implements ActionListener, MouseListener{
         Graphics2D g2D = (Graphics2D)g;
         super.paint(g); //setBackground
         //g2D.drawImage(background, 0, 0, null);
-        g2D.drawImage(CATGAME, 80, 50, null);
+        g2D.drawImage(CATGAME, 80, 0, null);
         g2D.drawImage(CAT1, x1, y1, null);
         g2D.drawImage(CAT2, x2, y2, null);
         g2D.drawImage(CAT3, x3, y3, null);
@@ -146,6 +159,8 @@ public class Homepage extends JPanel implements ActionListener, MouseListener{
         }else if(e.getSource() == Butplay){
             new gameframe(home);
             home.setVisible(false);
+        }else if(e.getSource() == Butscoreboard){
+            //input
         }
     }
 
@@ -155,6 +170,8 @@ public class Homepage extends JPanel implements ActionListener, MouseListener{
             Butplay.setIcon(Play2);
         }else if (e.getSource() == Butaboutus){
             Butaboutus.setIcon(Aboutus2);
+        }else if(e.getSource() == Butscoreboard){
+            Butscoreboard.setIcon(Scoreboard2);
         }
     }
 
@@ -164,6 +181,8 @@ public class Homepage extends JPanel implements ActionListener, MouseListener{
             Butplay.setIcon(Play1);
         }else if (e.getSource() == Butaboutus){
             Butaboutus.setIcon(Aboutus1);
+        }else if(e.getSource() == Butscoreboard){
+            Butscoreboard.setIcon(Scoreboard1);
         }
     }
 
