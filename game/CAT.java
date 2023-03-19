@@ -22,7 +22,10 @@ public class CAT{
     protected ArrayList<Pos> snake = new ArrayList<>();
     private char Oldcommad;
 
-    protected CAT(Foods f,JLabel[][] s){
+    private Game game;
+
+    protected CAT(Foods f,JLabel[][] s,Game g){
+        game = g;
         fruit = f;
         scene = s;
         Random rn = new Random();
@@ -76,7 +79,7 @@ public class CAT{
             }
             scene[(snake.get(0).row)][snake.get(0).col].setIcon(snake.get(0).img);;
         }catch(ArrayIndexOutOfBoundsException ArrOutOfbound){
-            System.exit(1);
+            game.setIsplay();
         }
         checkHitBody(); 
         fruit.CheckHitSnake(snake.get(0).row,snake.get(0).col);
@@ -125,14 +128,14 @@ public class CAT{
     private void checkHitBody(){
         for(int i = 1;i < snake.size();i++){
             if(snake.get(i).row == snake.get(0).row && snake.get(i).col == snake.get(0).col){
-                System.exit(1);
+                game.setIsplay();
             }
         }
     }
 
     private void checkHitRock(){
         if(Rock.AllRock.contains(new Pos(snake.get(0).row,snake.get(0).col))){
-            System.exit(1);
+            game.setIsplay();
         }
     }
 

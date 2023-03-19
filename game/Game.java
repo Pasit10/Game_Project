@@ -1,5 +1,5 @@
 package game;
-
+import ScoreBoard.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.Random;
@@ -18,18 +18,20 @@ public class Game extends JPanel implements ActionListener{
     private int maxstate = rn.nextInt(40);
     private int changeTimer = 0;
     private int addGoldenfish = 3;
-
+    private boolean isPlaying = true;
+    private gameframe gf;
     private JLabel score;
 
     Timer t = new Timer(speed, this);
-    public Game(JLabel score){
-        setSize(1980,1080);
+    public Game(JLabel score,gameframe gf){
+        this.gf = gf;
         this.score = score;
+        setSize(1980,1080);
         setLayout(new GridLayout(x,y));
         addKeyListener(new KeyboardGame());
         GameComponent();
         fruit = new Foods(snakescenes);
-        snake = new CAT(fruit,snakescenes);
+        snake = new CAT(fruit,snakescenes,this);
         setFocusable(true);
         setBackground(Color.BLACK);
         new Rock(snakescenes);
@@ -46,6 +48,10 @@ public class Game extends JPanel implements ActionListener{
                 add(snakescenes[i][j]);
             }
         }
+    }
+
+    protected void setIsplay(){
+        isPlaying = false;
     }
 
     @Override public void actionPerformed(ActionEvent ev){
@@ -68,6 +74,11 @@ public class Game extends JPanel implements ActionListener{
         changeTimer++;
         snake.move(command);
         score.setText("Score : " + snake.getSnakelength());
+        if(!isPlaying){
+            t.stop();
+            new AddnametoScoreBoard(snake.getSnakelength());
+            gf.setVisible(false);
+        }
     }
 
     private class KeyboardGame extends KeyAdapter{
