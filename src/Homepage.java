@@ -49,8 +49,8 @@ public class Homepage extends JPanel implements ActionListener, MouseListener{
         CAT3 = new ImageIcon("IMG/Cat6.png").getImage().getScaledInstance(116, 70, Image.SCALE_DEFAULT);
         //background = new ImageIcon("IMG/nyancat500-background.jpg").getImage();
         CATGAME = new ImageIcon("IMG/CatgameName200.png").getImage();
-        Play1 = new ImageIcon(new ImageIcon("IMG/Play6200.png").getImage());
-        Play2 = new ImageIcon(new ImageIcon("IMG/Play7.png").getImage().getScaledInstance(267, 200, Image.SCALE_DEFAULT));
+        Play1 = new ImageIcon(new ImageIcon("IMG/Play8.png").getImage().getScaledInstance(267, 150, Image.SCALE_DEFAULT));
+        Play2 = new ImageIcon(new ImageIcon("IMG/Play9.png").getImage().getScaledInstance(267, 150, Image.SCALE_DEFAULT));
         Aboutus1 = new ImageIcon(new ImageIcon("IMG/aboutus1.png").getImage().getScaledInstance(355, 200, Image.SCALE_DEFAULT));
         Aboutus2 = new ImageIcon(new ImageIcon("IMG/aboutus2.png").getImage().getScaledInstance(355, 200, Image.SCALE_DEFAULT));
         timer = new Timer(10, this);
@@ -61,7 +61,7 @@ public class Homepage extends JPanel implements ActionListener, MouseListener{
         Butplay.setContentAreaFilled(false); //not show layout behind the button
         Butplay.setBorderPainted(false); //ปิดขอบ
         Butplay.setIcon(Play1);
-        Butplay.setBounds(275, 245, 260, 120);
+        Butplay.setBounds(275, 235, 260, 120);
         Butplay.addMouseListener(this);
         this.add(Butplay);
 
