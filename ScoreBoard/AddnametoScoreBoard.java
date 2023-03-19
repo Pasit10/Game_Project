@@ -44,11 +44,12 @@ public class AddnametoScoreBoard extends JFrame implements MouseListener{
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         AddnametoScoreBoradComponents();
         
-
         setSize(800,500);
+        setLocationRelativeTo(null);
         bgimage = new JLabel(new ImageIcon("IMG/nyancat500-background.jpg"));
         bgimage.setBounds(0, 0, 800, 500);
         this.add(bgimage);
+        
 
         //setComponentZOrder(bgimage, 0);
         setLayout(null);
