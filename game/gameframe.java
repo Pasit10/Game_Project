@@ -21,7 +21,7 @@ public class gameframe extends JFrame{
         setLocationRelativeTo(null);
         g = new Game(score,this);
         g.setBounds(0, 30, 1200, 700);
-        score.setBounds(550, 10, 100, 10);
+        score.setBounds(550, 10, 100, 20);
         add(g);
         add(score);
         setVisible(true);
