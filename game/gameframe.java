@@ -1,12 +1,11 @@
 package game;
-import java.awt.*;
-import javax.swing.*;
 
+import javax.swing.*;
 import src.CatGame;
 
 public class gameframe extends JFrame{
     private JLabel score;
-    private static final int WIDTH = 1200;
+    private static final int WIDTH = 1220;
     private static final int HEIGHT = 750;
     private Game g;
     CatGame home;
@@ -20,7 +19,7 @@ public class gameframe extends JFrame{
         setResizable(false);
         setLocationRelativeTo(null);
         g = new Game(score,this);
-        g.setBounds(0, 30, 1200, 700);
+        g.setBounds(0, 30, 1220, 700);
         score.setBounds(550, 10, 100, 20);
         add(g);
         add(score);

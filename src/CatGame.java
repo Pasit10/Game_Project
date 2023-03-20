@@ -5,8 +5,6 @@ package src;
 import javax.swing.*;
 
 public class CatGame extends JFrame{
-
-    Game game;
     Homepage Home;
     playmusic Sound = new playmusic();
     
