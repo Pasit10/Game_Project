@@ -28,8 +28,15 @@ public class CAT{
         fruit = f;
         scene = s;
         Random rn = new Random();
-        int x = rn.nextInt(scene.length);
-        int y = rn.nextInt(scene[0].length);
+        int x;
+        int y;
+        while(true){
+            x = rn.nextInt(scene.length);
+            y = rn.nextInt(scene[0].length);
+            if(!Rock.AllRock.contains(new Pos(x, y))){
+                break;
+            }
+        }   
         snake.add(new Pos(x, y,Headright));
         scene[x][y].setIcon(Headright);
         fruit.setSnake(this);
