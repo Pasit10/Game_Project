@@ -111,11 +111,6 @@ public class AddnametoScoreBoard extends JFrame implements MouseListener{
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
-
-	}
-
-	@Override
-	public void mousePressed(MouseEvent e) {
         if(e.getSource() == Butnext){
             addDatatocsv();
             setVisible(false);
@@ -125,6 +120,11 @@ public class AddnametoScoreBoard extends JFrame implements MouseListener{
             new gameframe(catgame);
             setVisible(false);
         }
+	}
+
+	@Override
+	public void mousePressed(MouseEvent e) {
+
 	}
 
 	@Override

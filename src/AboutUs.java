@@ -74,19 +74,20 @@ public class AboutUs extends JFrame implements MouseListener{
 
     @Override
     public void mouseClicked(MouseEvent e) {
-        System.out.println("You Clicked the mouse");
-    }
-
-    @Override
-    public void mousePressed(MouseEvent e) {
-        //System.out.println("You Pressed the mouse");
+        //System.out.println("You Clicked the mouse");
         home.setVisible(true);
         this.setVisible(false);
     }
 
     @Override
+    public void mousePressed(MouseEvent e) {
+        //System.out.println("You Pressed the mouse");
+
+    }
+
+    @Override
     public void mouseReleased(MouseEvent e) {
-        System.out.println("You Released the mouse");
+        //System.out.println("You Released the mouse");
     }
 
     @Override

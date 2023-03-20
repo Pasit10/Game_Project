@@ -147,14 +147,6 @@ public class Homepage extends JPanel implements ActionListener, MouseListener{
 
     @Override
     public void mouseClicked(MouseEvent e) {
-    }
-
-    @Override
-    public void mousePressed(MouseEvent e) {
-    }
-
-    @Override
-    public void mouseReleased(MouseEvent e) {
         if(e.getSource() == Butaboutus){
             new AboutUs(home);
             home.setVisible(false);
@@ -165,6 +157,15 @@ public class Homepage extends JPanel implements ActionListener, MouseListener{
             new ScoreBoard(home);
             home.setVisible(false);
         }
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e) {
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+
     }
 
     @Override
