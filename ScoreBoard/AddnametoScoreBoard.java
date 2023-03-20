@@ -42,7 +42,7 @@ public class AddnametoScoreBoard extends JFrame implements MouseListener{
         
         setSize(800,500);
         setLocationRelativeTo(null);
-        bgimage = new JLabel(new ImageIcon("IMG/nyancat500-background.jpg"));
+        bgimage = new JLabel(new ImageIcon("IMG/green500-background.jpg"));
         bgimage.setBounds(0, 0, 800, 500);
         this.add(bgimage);
         
@@ -53,10 +53,10 @@ public class AddnametoScoreBoard extends JFrame implements MouseListener{
     }
 
     private void AddnametoScoreBoradComponents(){
-        gameOver = new JLabel("GameOver");
-        gameOver.setBounds(220, 5,400, 210);
+        gameOver = new JLabel("Game Over");
+        gameOver.setBounds(180, 0,440, 210);
         gameOver.setFont(new Font("Courier New",Font.BOLD,80));
-        gameOver.setForeground(Color.WHITE);
+        gameOver.setForeground(Color.darkGray);
         add(gameOver);
 
         yourscore = new JLabel("Your Score : " + score);

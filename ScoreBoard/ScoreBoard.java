@@ -23,7 +23,7 @@ public class ScoreBoard extends JFrame implements MouseListener{
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(null);
         setLocationRelativeTo(null);
-        JLabel bgimage = new JLabel(new ImageIcon("IMG/nyancat500-background.jpg"));
+        JLabel bgimage = new JLabel(new ImageIcon("IMG/ocean500-background.jpg"));
         bgimage.setBounds(0, 0, 800, 500);
         scoreBoardcomponent();  
         this.add(bgimage);
@@ -58,8 +58,8 @@ public class ScoreBoard extends JFrame implements MouseListener{
 
     private void PrintData(){
         Font font2 = new Font("Lucida Console",Font.PLAIN,30);
-        JLabel headname = new JLabel("name");
-        JLabel headscore = new JLabel("score");
+        JLabel headname = new JLabel("Name");
+        JLabel headscore = new JLabel("Score");
         headname.setFont(font2);
         headscore.setFont(font2);
         headname.setBounds(240,100,100,70);
@@ -73,7 +73,7 @@ public class ScoreBoard extends JFrame implements MouseListener{
             if(i >= 4){
                 break;
             }
-            JLabel name = new JLabel((i + 1) + "  " + allPersons.get(i).name);
+            JLabel name = new JLabel((i + 1) + ".  " + allPersons.get(i).name);
             JLabel score = new JLabel("" + allPersons.get(i).score);
             name.setFont(font2);
             score.setFont(font2);

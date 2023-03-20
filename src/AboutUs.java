@@ -45,7 +45,7 @@ public class AboutUs extends JFrame implements MouseListener{
         panels.setPreferredSize(new Dimension(WIDTH,HEIGHT));
         panels.setBackground(Color.BLACK);
 
-        bgimage = new JLabel(new ImageIcon("IMG/nyancat500-background.jpg"));
+        bgimage = new JLabel(new ImageIcon("IMG/purple500-background.jpg"));
         bgimage.setBounds(0, 0, 800, 500);
         panels.add(bgimage);
 
