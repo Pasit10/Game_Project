@@ -5,7 +5,7 @@ import java.awt.event.*;
 import java.util.Random;
 import javax.swing.*;
 
-public class Game extends JPanel implements ActionListener{
+public class Game extends JLabel implements ActionListener{
     private int speed = 140;
     private int x = 30;
     private int y = 60;
@@ -26,16 +26,16 @@ public class Game extends JPanel implements ActionListener{
     public Game(JLabel score,gameframe gf){
         this.gf = gf;
         this.score = score;
-        setSize(1980,1080);
+        setIcon(new ImageIcon("IMG/green-background.jpg"));
+        setOpaque(false);
+        setSize(1200,700);
         setLayout(new GridLayout(x,y));
         addKeyListener(new KeyboardGame());
         GameComponent();
+        new Rock(snakescenes);
         fruit = new Foods(snakescenes);
         snake = new CAT(fruit,snakescenes,this);
         setFocusable(true);
-        setBackground(Color.BLACK);
-        //setBackground(new Color(1, 68, 121, 255));
-        new Rock(snakescenes);
         fruit.setPosCommonFish();
         fruit.setPosGoldenFish();
         t.start();
