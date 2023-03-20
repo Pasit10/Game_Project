@@ -16,10 +16,12 @@ public class UFO implements ActionListener{
     private command cd;
     private Timer t = new Timer(200, this);
     private Random rn = new Random();
+    private Foods food;
     private int x;
     private int y;
 
-    protected UFO(JLabel[][] s){
+    protected UFO(JLabel[][] s,Foods f){
+        food = f;
         scenes = s;
         if(Math.random() > 0.5){
             x = 0;
@@ -50,5 +52,6 @@ public class UFO implements ActionListener{
             t.stop();
         }
         System.out.println(x + " " + y + "rock");
+        food.CheckHitSnake(x, y);
     }
 }

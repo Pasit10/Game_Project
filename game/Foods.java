@@ -43,7 +43,7 @@ public class Foods {
         }
     }
 
-    protected boolean CheckHitSnake(int x,int y){
+    protected void CheckHitSnake(int x,int y){
         for(int i = 0;i < AllFruit.size();i++){
             if(AllFruit.get(i).row == x && AllFruit.get(i).col == y){
                 if(AllFruit.get(i).name.equals("commonfish")){
@@ -55,6 +55,13 @@ public class Foods {
                 AllFruit.remove(i);
             }
         }
-        return false;
+    }
+
+    protected void CheckHitufo(int x,int y){
+        for(int i = 0;i < AllFruit.size();i++){
+            if(AllFruit.get(i).row == x && AllFruit.get(i).col == y){
+                AllFruit.remove(i);
+            }
+        }
     }
 }

@@ -18,7 +18,7 @@ public class Game extends JLabel implements ActionListener{
     private int maxstate = rn.nextInt(40);
     private int changeTimer = 0;
     private int addGoldenfish = 3;
-    private boolean isPlaying = true;
+    boolean isPlaying = true;
     private gameframe gf;
     private JLabel score;
 
@@ -65,7 +65,7 @@ public class Game extends JLabel implements ActionListener{
         if(addGoldenfish <= 0){
             fruit.setPosGoldenFish();
             addGoldenfish = 3;
-            new UFO(snakescenes);
+            new UFO(snakescenes,fruit);
         }
         if(changeTimer >= 100 && speed > 50){
             changeTimer = 0;
