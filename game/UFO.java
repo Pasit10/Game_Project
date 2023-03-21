@@ -10,7 +10,7 @@ enum command{
 
 public class UFO implements ActionListener{
     private JLabel[][] scenes;
-    private Icon ufo = new ImageIcon("game/IMGFORGAME/CatRight.png");
+    private Icon ufo = new ImageIcon("IMG/UFO222.png");
     private command cd;
     private Timer t = new Timer(200, this);
     private Random rn = new Random();

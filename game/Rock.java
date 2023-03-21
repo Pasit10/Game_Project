@@ -32,9 +32,9 @@ public class Rock {
             AllRock.add(new Pos(x, y));
             AllY.add(x);
             if(Math.random() < 0.50){
-                rock = new ImageIcon("IMG/stone225.png");
+                rock = new ImageIcon("IMG/stone420.png");
             }else{
-                rock = new ImageIcon("IMG/stone20.png");
+                rock = new ImageIcon("IMG/stone520.png");
             }
             scenes[x][y].setIcon(rock);
         }

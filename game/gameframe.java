@@ -22,7 +22,7 @@ public class gameframe extends JFrame{
         setResizable(false);
         setLocationRelativeTo(null);
         g = new Game(score,this);
-        g.setBounds(0, 30, 1220, 700);
+        g.setBounds(0, 30, 1200, 700);
         score.setBounds(540, 10, 120, 22);
         add(g);
         add(score);
