@@ -56,7 +56,7 @@ public class AddnametoScoreBoard extends JFrame implements MouseListener{
         gameOver = new JLabel("Game Over");
         gameOver.setBounds(180, 0,440, 210);
         gameOver.setFont(new Font("Courier New",Font.BOLD,80));
-        gameOver.setForeground(Color.darkGray);
+        gameOver.setForeground(Color.WHITE);
         add(gameOver);
 
         yourscore = new JLabel("Your Score : " + score);
