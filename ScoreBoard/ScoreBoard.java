@@ -23,7 +23,7 @@ public class ScoreBoard extends JFrame implements MouseListener{
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(null);
         setLocationRelativeTo(null);
-        JLabel bgimage = new JLabel(new ImageIcon("IMG/ocean500-background.jpg"));
+        JLabel bgimage = new JLabel(new ImageIcon("IMG/nyancat500-background.jpg"));
         bgimage.setBounds(0, 0, 800, 500);
         scoreBoardcomponent();  
         this.add(bgimage);

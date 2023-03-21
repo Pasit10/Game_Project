@@ -42,7 +42,7 @@ public class AddnametoScoreBoard extends JFrame implements MouseListener{
         
         setSize(800,500);
         setLocationRelativeTo(null);
-        bgimage = new JLabel(new ImageIcon("IMG/green500-background.jpg"));
+        bgimage = new JLabel(new ImageIcon("IMG/nyancat500-background.jpg"));
         bgimage.setBounds(0, 0, 800, 500);
         this.add(bgimage);
         
