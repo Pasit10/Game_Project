@@ -2,7 +2,7 @@ package game;
 import ScoreBoard.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.util.Random;
+import java.util.ArrayList;
 import javax.swing.*;
 
 public class Game extends JLabel implements ActionListener{
@@ -13,14 +13,12 @@ public class Game extends JLabel implements ActionListener{
     private char command;
     private Foods fruit;
     private CAT snake;
-    private Random rn = new Random();
-    private int state = 0;
-    private int maxstate = rn.nextInt(40);
     private int changeTimer = 0;
-    private int addGoldenfish = 3;
     boolean isPlaying = true;
     private gameframe gf;
     private JLabel score;
+
+    private ArrayList<UFO> ufos = new ArrayList<>();
 
     Timer t = new Timer(speed, this);
     public Game(JLabel score,gameframe gf){
@@ -56,27 +54,33 @@ public class Game extends JLabel implements ActionListener{
     }
 
     @Override public void actionPerformed(ActionEvent ev){
-        if(state >= maxstate){
-            state = 0;
-            maxstate = rn.nextInt(60);
+        if(Math.random() > 0.6){
             fruit.setPosCommonFish();
-            addGoldenfish--;
         }
-        if(addGoldenfish <= 0){
+        if(Math.random() > 0.8){
             fruit.setPosGoldenFish();
-            addGoldenfish = 3;
-            new UFO(snakescenes,fruit);
+        }
+        if(Math.random() > 0.9){
+            if(ufos.size() <= 5){
+                ufos.add(new UFO(snakescenes, fruit));
+            }
         }
         if(changeTimer >= 100 && speed > 50){
             changeTimer = 0;
             speed -= 2;
             t.setDelay(speed);
         }
-        state++;
+        for(int i = 0;i < ufos.size();i++){
+            if(ufos.get(i).getHitede()){
+                ufos.remove(i);
+            }
+        }
+        System.out.println(ufos);
         changeTimer++;
         snake.move(command);
         score.setText("Score : " + snake.getSnakelength());
         if(!isPlaying){
+            ufos.clear();
             t.stop();
             new AddnametoScoreBoard(snake.getSnakelength(),gf.home);
             gf.setVisible(false);
