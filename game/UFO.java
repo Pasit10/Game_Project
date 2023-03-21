@@ -29,10 +29,11 @@ public class UFO implements ActionListener{
             x = scenes[0].length - 1;
             cd = command.LEFT;
         }
-        y = rn.nextInt(scenes.length);
-        if(Rock.AllY.contains(y)){
-            System.out.println("Random โง่ๆ");
-            return;
+        while(true){
+            y = rn.nextInt(scenes.length);
+            if(!Rock.AllY.contains(y)){
+                break;
+            }
         }
         scenes[y][x].setIcon(ufo);
         t.start();

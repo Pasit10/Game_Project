@@ -137,7 +137,6 @@ public class CAT{
             if(snake.get(i).row == snake.get(0).row && snake.get(i).col == snake.get(0).col){
                 game.setIsplay();
                 System.out.println("hit body");
-                snake.clear();
             }
         }
     }
@@ -146,7 +145,7 @@ public class CAT{
         if(Rock.AllRock.contains(new Pos(snake.get(0).row,snake.get(0).col))){
             game.setIsplay();
             System.out.println("hit rock");
-            snake.clear();
+
         }
     }
 
