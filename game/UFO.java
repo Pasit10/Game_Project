@@ -1,8 +1,6 @@
 package game;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
 import java.util.Random;
 import javax.swing.*;
 
@@ -17,6 +15,7 @@ public class UFO implements ActionListener{
     private Timer t = new Timer(200, this);
     private Random rn = new Random();
     private Foods food;
+    private Boolean hitedge = false;
     private int x;
     private int y;
 
@@ -49,9 +48,18 @@ public class UFO implements ActionListener{
             }
             scenes[y][x].setIcon(ufo);
         }catch(Exception ex){
+            hitedge = true;
             t.stop();
         }
-        System.out.println(x + " " + y + "rock");
-        food.CheckHitSnake(x, y);
+        //System.out.println(x + " " + y + "rock");
+        food.CheckHitufo(x, y);
+    }
+
+    @Override public String toString(){
+        return String.format("[%d,%d]",x,y);
+    }
+
+    protected boolean getHitede(){
+        return hitedge;
     }
 }
