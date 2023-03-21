@@ -26,7 +26,7 @@ public class Game extends JLabel implements ActionListener{
     public Game(JLabel score,gameframe gf){
         this.gf = gf;
         this.score = score;
-        //setIcon(new ImageIcon("IMG/green-background.jpg"));
+        setIcon(new ImageIcon("IMG/white-background.jpg"));
         setOpaque(false);
         setSize(1200,700);
         setLayout(new GridLayout(x,y));
