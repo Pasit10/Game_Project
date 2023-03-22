@@ -19,8 +19,4 @@ public class CatGame extends JFrame{
         setResizable(false);
         Sound.Playmusic("Sound/Nyan-Cat.wav");
     }
-           
-    public static void main(String[] args) {
-        new CatGame();
-    }
 }
