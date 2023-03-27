@@ -17,7 +17,7 @@ class playmusic {
                 clip.start();
                 clip.loop(Clip.LOOP_CONTINUOUSLY);
                 FloatControl nyancat = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
-                nyancat.setValue(-10);
+                nyancat.setValue(-30);
             }else{
                 System.out.println("can't play");
             }

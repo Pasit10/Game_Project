@@ -96,7 +96,11 @@ public class AddnametoScoreBoard extends JFrame implements MouseListener{
     private void addDatatocsv(){
         try{
             FileWriter csvWriter = new FileWriter("ScoreBoard/score.csv",true);
-            csvWriter.append(addName.getText() + "," + score + "\n");
+            String name = addName.getText();
+            if(name.equals("") || name.equals(null)){
+                name = "Player";
+            }
+            csvWriter.append(name + "," + score + "\n");
 
             csvWriter.flush();
             csvWriter.close();
