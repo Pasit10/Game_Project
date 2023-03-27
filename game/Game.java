@@ -67,7 +67,7 @@ public class Game extends JLabel implements ActionListener{
         }
         if(changeTimer >= 100 && speed > 50){
             changeTimer = 0;
-            speed -= 2;
+            speed -= 5;
             t.setDelay(speed);
         }
         for(int i = 0;i < ufos.size();i++){
