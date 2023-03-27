@@ -65,22 +65,22 @@ public class CAT{
                 case 'w' :
                     snake.get(0).row = (snake.get(0).row - 1);
                     snake.get(0).img = Headup;
-                    if(snake.size() > 1) body = checkTailUP();
+                    body = checkTailUP();
                     break;
                 case 's':
                     snake.get(0).row = (snake.get(0).row + 1);
                     snake.get(0).img = Headdown;
-                    if(snake.size() > 1) body = checkTailDown();
+                    body = checkTailDown();
                     break;
                 case 'a':
                     snake.get(0).col = (snake.get(0).col - 1);
                     snake.get(0).img = Headleft;
-                    if(snake.size() > 1) body = checkTailLeft();
+                    body = checkTailLeft();
                     break;
                 case 'd':
                     snake.get(0).col = (snake.get(0).col + 1);
                     snake.get(0).img = Headright;
-                    if(snake.size() > 1) body = checkTailRight();
+                    body = checkTailRight();
                     break;
             }
             scene[(snake.get(0).row)][snake.get(0).col].setIcon(snake.get(0).img);;
