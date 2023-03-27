@@ -6,7 +6,7 @@ import src.CatGame;
 
 public class gameframe extends JFrame{
     private JLabel score;
-    private static final int WIDTH = 1220;
+    private static final int WIDTH = 1200;
     private static final int HEIGHT = 750;
     private Font font = new Font("Lucida Console",Font.BOLD,20);
     private Game g;
