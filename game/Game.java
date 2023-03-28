@@ -75,7 +75,6 @@ public class Game extends JLabel implements ActionListener{
                 ufos.remove(i);
             }
         }
-        System.out.println(ufos);
         changeTimer++;
         snake.move(command);
         score.setText("Score : " + snake.getSnakelength());
